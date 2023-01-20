@@ -1,0 +1,10 @@
+<details id="{{id}}" class="govuk-details {{classes}}" data-module="govuk-details">
+    <summary class="govuk-details__summary" (click)="raiseEvents()">
+        <span class="govuk-details__summary-text" id="details-summary-{{id}}">
+            {{summaryText}}
+        </span>
+    </summary>
+    <div class="govuk-details__text" id="details-text-{{id}}">
+        <ng-content></ng-content>
+    </div>
+</details>

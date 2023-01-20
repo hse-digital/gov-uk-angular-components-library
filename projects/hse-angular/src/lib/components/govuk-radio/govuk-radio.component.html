@@ -1,0 +1,14 @@
+<div id="group-{{id}}" class="govuk-radios__item" tabindex="-1" style="margin-bottom: 10px;" (click)="clicked()">
+
+    <input id="{{id}}-input" name="{{name}}" (change)="model.selected = value" [value]="value" type="radio" class="govuk-radios__input" tabindex="0">
+    <label id="{{id}}-label" class="govuk-label govuk-radios__label" for="{{id}}-input">{{label_text}}</label>
+
+    <govuk-hint id="radio-item-{{id}}" [text]="hint_text" classes="govuk-radios__hint"></govuk-hint>
+
+    <div class="govuk-radios__conditional" [class.govuk-radios__conditional--hidden]="model.selected != value" id="conditional-{{id}}">
+        <div class="govuk-form-group">
+            <ng-content></ng-content>
+        </div>
+    </div>
+
+</div>

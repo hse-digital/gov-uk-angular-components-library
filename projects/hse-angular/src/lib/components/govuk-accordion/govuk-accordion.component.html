@@ -1,0 +1,17 @@
+<div class="govuk-accordion" data-module="govuk-accordion" [id]="id">
+
+    <div class="govuk-accordion__controls">
+
+      <button type="button" (click)="toggleAll()" id="toggle-all-btn-{{id}}"
+         class="govuk-accordion__open-all"
+         aria-expanded="false">
+         {{sectionButtonText}}
+         <span class="govuk-visually-hidden">sections</span>
+      </button>
+
+    </div>
+
+    <ng-content></ng-content>
+
+
+</div>

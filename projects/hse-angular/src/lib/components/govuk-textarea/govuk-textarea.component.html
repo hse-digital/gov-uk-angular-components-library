@@ -1,0 +1,18 @@
+<govuk-field  [id]="id" [hint_text]="hint_text" [hint_classes]="hint_classes"
+              [label_text]="label_text" [label_classes]="label_classes" 
+              [label_isPageHeading]="label_isPageHeading" [label_for]="label_for" 
+              [error_text]="error_text" [error_classes]="error_classes">
+
+    <textarea [id]="id"
+            [attr.name]="name || id"
+            [attr.rows]="rows"
+            class="govuk-textarea {{classes}}"
+            [ngClass]="{'govuk-textarea--error' : error_text }"
+            [attr.aria-describedby]="describeBy"
+            [attr.maxlength]="maxlength"
+            [attr.type]="type"
+            [(ngModel)]="model"
+            (ngModelChange)="modelChange.emit($event)" >
+  </textarea>
+  
+<govuk-field>

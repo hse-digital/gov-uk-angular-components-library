@@ -1,0 +1,15 @@
+<govuk-field [id]="id" [label_text]="label_text" [label_classes]="label_classes"
+             [label_isPageHeading]="label_isPageHeading" [label_for]="label_for" 
+             [hint_text]="hint_text" [hint_classes]="hint_classes" 
+             [error_text]="error_text" [error_classes]="error_classes">
+
+    <select [id]="id" [attr.name]="name || id" class="govuk-select {{ classes }}"
+        [ngClass]="{ 'govuk-select--error': error_text }" [attr.aria-describedby]="describeBy" [ngModel]="model"
+        (change)="onChange($event)">
+
+        <option *ngFor="let item of items" [value]="item.value" [disabled]="item.disabled">
+            {{ item.text }} {{ item.disabled }}
+        </option>
+
+    </select>
+</govuk-field>

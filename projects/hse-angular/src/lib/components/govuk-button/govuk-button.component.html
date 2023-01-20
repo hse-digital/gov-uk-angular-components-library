@@ -1,0 +1,21 @@
+<a id="btn-{{id}}"
+   class="govuk-button {{classes}}"
+   data-module="govuk-button"
+   type="button"
+   [name]="name || id"
+   [routerLink]="getRouterLink()"
+   [class.govuk-button--disabled]="disabled"
+   (click)="onClick.emit($event)"
+   (focus)="onFocus.emit($event)"
+   (blur)="onBlur.emit($event)">
+
+  <span *ngIf="!isLoading">
+    <ng-content></ng-content>
+  </span>
+
+  <span *ngIf="isLoading">
+    <i class="fa fa-spinner fa-spin"></i>
+    <span> {{loadingText}} </span>
+  </span>
+
+</a>

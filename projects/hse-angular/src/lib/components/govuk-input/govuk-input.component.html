@@ -1,0 +1,22 @@
+<govuk-field    [id]="id" [hint_text]="hint_text" [hint_classes]="hint_classes"
+                [error_text]="error_text" [error_classes]="error_classes"
+                [label_text]="label_text" [label_classes]="label_classes" 
+                [label_isPageHeading]="label_isPageHeading" [label_for]="label_for">
+
+    <input  [id]="id"
+            [attr.name]="name || id"
+            class="govuk-input {{classes}}"
+            [ngClass]="{'govuk-input--error' : error_text}"
+            [attr.aria-describedby]="describeBy"
+            [attr.maxlength]="maxlength"
+            [attr.type]="type"
+            [(ngModel)]="model"
+            (ngModelChange)="modelChange.emit($event)" 
+            (focus)="onInputFocus.emit($event)"
+            (blur)="onInputBlur.emit($event)"
+            (submit)="onInputSubmit.emit($event)"
+            (scroll)="onInputScroll.emit($event)">
+  
+    <govuk-link-action [id]="id"  [text]="link_action_text" [action]="link_action_action"></govuk-link-action>
+  
+  <govuk-field>

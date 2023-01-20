@@ -1,0 +1,25 @@
+<govuk-fieldset [id]="id" [error_text]="error_text" [error_classes]="error_classes"
+                [text]="text" [isPageHeading]="isPageHeading" [classes]="fieldset_classes" [fieldset_marginbottom]="fieldset_marginbottom"
+                [hint_text]="hint_text" [hint_classes]="hint_classes">
+
+    <div class="govuk-checkboxes {{checkbox_classes}}">
+      <div class="govuk-checkboxes__item" *ngFor="let choice of model; let i = index">
+        <input class="govuk-checkboxes__input"
+                [id]="id + '-' + i"
+                [name]="id + '-' + i"
+                [value]="choice.value"
+                [(ngModel)]="choice.checked"
+                (ngModelChange)="onModelChange(id, i, choice)"
+                type="checkbox"
+                [attr.aria-describedby]="describeBy">
+  
+        <label class="govuk-label govuk-checkboxes__label"
+               [for]="id + '-' + i"
+               [attr.data-qa]="id + '-' + choice.value.toLowerCase() + '-' + i"> {{choice.text}}
+        </label>
+  
+        <govuk-hint id="{{id}}-{{choice.value}}" [text]="choice.hint" classes="govuk-checkboxes__hint no-margin"></govuk-hint>
+      </div>
+    </div>
+  
+  </govuk-fieldset>

@@ -1,0 +1,58 @@
+<govuk-fieldset [id]="id"
+                [text]="text" [isPageHeading]="isPageHeading" [classes]="fieldset_classes" [fieldset_marginbottom]="fieldset_marginbottom"
+                [hint_text]="hint_text" [hint_classes]="hint_classes"
+                [error_text]="error_text" [error_classes]="error_classes">
+      <div class="govuk-date-input" id="{{id}}-date-input">
+        <div class="govuk-date-input__item">
+
+          <div class="govuk-form-group">
+
+            <label class="govuk-label govuk-date-input__label" for="{{id}}-day">
+              Day
+            </label>
+
+            <input class="govuk-input govuk-date-input__input govuk-input--width-2"
+                   [(ngModel)]="model.day"
+                   maxlength="2"
+                   id="{{id}}-day"
+                   name="{{id}}-day"
+                   type="text" inputmode="numeric">
+          </div>
+        </div>
+
+        <div class="govuk-date-input__item">
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-date-input__label" for="{{id}}-month">
+              Month
+            </label>
+
+            <input class="govuk-input govuk-date-input__input govuk-input--width-2"
+                   [(ngModel)]="model.month"
+                   maxlength="2"
+                   id="{{id}}-month"
+                   name="{{id}}-month"
+                   type="text"
+                   inputmode="numeric">
+          </div>
+        </div>
+
+        <div class="govuk-date-input__item">
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-date-input__label" for="{{id}}-year">
+              Year
+            </label>
+
+            <input class="govuk-input govuk-date-input__input govuk-input--width-4"
+                   [(ngModel)]="model.year"
+                   maxlength="4"
+                   id="{{id}}-year"
+                   name="{{id}}-year"
+                   type="text"
+                   inputmode="numeric">
+          </div>
+
+        </div>
+
+      </div>
+      <govuk-link-action [id]="id" [text]="link_action_text" [action]="link_action_action"></govuk-link-action>
+    </govuk-fieldset>

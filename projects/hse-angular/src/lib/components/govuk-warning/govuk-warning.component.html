@@ -1,0 +1,8 @@
+<div id="warning-message-block" class="govuk-warning-text warning-message" [style.background-color]="background">
+    <span class="govuk-warning-text__icon" aria-hidden="true">!</span> <strong class="govuk-warning-text__text"> <span
+            class="govuk-warning-text__assistive">Warning</span>
+        {{message}} </strong>
+    <div id="user-warning-message-advice" class="govuk-body warning-message-advice">
+        <ng-content></ng-content>
+    </div>
+</div>

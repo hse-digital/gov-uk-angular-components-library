@@ -1,0 +1,15 @@
+<div [govukErrorLine]="error_text" class="">
+    <fieldset class="govuk-fieldset {{fieldset_marginbottom}}" [attr.aria-describedby]="describedBy">
+
+        <legend class="govuk-fieldset__legend {{classes}}" id="fieldset-{{id}}">
+            <h1 *ngIf="isPageHeading" class="govuk-fieldset__heading"> {{text}} </h1>
+            <h2 *ngIf="!isPageHeading" class="govuk-fieldset__heading"> {{text}} </h2>
+        </legend>
+
+        <govuk-hint *ngIf="hint_text" [id]="id" [text]="hint_text" [classes]="hint_classes"></govuk-hint>
+        <govuk-error [id]="id" [text]="error_text" [classes]="error_classes"></govuk-error>
+
+        <ng-content></ng-content>
+
+    </fieldset>
+</div>
