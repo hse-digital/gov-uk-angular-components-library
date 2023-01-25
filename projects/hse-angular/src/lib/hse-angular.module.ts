@@ -28,9 +28,9 @@ import { GovukFooterComponent } from './components/govuk-footer/govuk-footer.com
 import { GovukInputComponent } from './components/govuk-input/govuk-input.component';
 import { GovukLinkActionComponent } from './components/govuk-link-action/govuk-link-action.component';
 import { GovukTextareaComponent } from './components/govuk-textarea/govuk-textarea.component';
-import { GovukTaskListItemComponent } from './components/govuk-task-list-item/govuk-task-list-item.component';
+import { GovukTaskListItemComponent } from './components/govuk-task-list/govuk-task-list-item.component';
 import { GovukRadioGroupComponent } from './components/govuk-radio/govuk-radio-group.component';
-import { GovukTaskListGroupComponent } from './components/govuk-task-list/govuk-task-list-group.component';
+import { GovukTaskListComponent } from './components/govuk-task-list/govuk-task-list.component';
 import { GovukNavComponent } from './components/govuk-navbar/govuk-nav.component';
 import { GovukBreadcrumbGroupComponent } from './components/govuk-breadcrumb/govuk-breadcrumb-group.component';
 import { GovukAccordionSectionComponent } from './components/govuk-accordion/govuk-accordion-section.component';
@@ -78,7 +78,7 @@ const components = [
   GovukBodyComponent,
   GovukTagComponent,
   GovukSummaryListComponent,
-  GovukTaskListGroupComponent,
+  GovukTaskListComponent,
   GovukBackLinkComponent,
   GovukDetailsComponent,
   GovukListComponent,
