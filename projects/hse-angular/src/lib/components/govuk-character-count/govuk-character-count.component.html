@@ -1,0 +1,10 @@
+<ng-container *ngIf="enableCharacterCount">
+    <div class="govuk-hint govuk-character-count__message govuk-character-count__status" aria-hidden="true"
+        *ngIf="numCharactersRemaining >= 0">
+        You have {{numCharactersRemaining}} characters remaining
+    </div>
+    <div class="govuk-character-count__message govuk-character-count__status govuk-error-message" aria-hidden="true"
+        *ngIf="numCharactersRemaining < 0">
+        You have {{numCharactersRemaining | absoluteValue }} characters too many
+    </div>
+</ng-container>

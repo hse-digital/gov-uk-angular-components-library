@@ -2,14 +2,13 @@ import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'govuk-link-action',
-  templateUrl: './govuk-link-action.component.html',
-  styleUrls: ['./govuk-link-action.component.scss']
+  templateUrl: './govuk-link-action.component.html'
 })
 export class GovukLinkActionComponent {
-  @Input() id: any; 
-  @Input() text:any;
-  @Input() href: any;
-  @Input() action: any;
+  @Input() id?: string; 
+  @Input() text?: string;
+  @Input() href?: string;
+  @Input() action?: any;
   
   onClick(event: any) {
     this.action.action(event)

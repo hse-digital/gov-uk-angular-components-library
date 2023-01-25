@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { AfterViewInit, Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'govuk-textarea',
@@ -6,35 +6,45 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   styleUrls: ['./govuk-textarea.component.scss']
 })
 export class GovukTextareaComponent {
-  @Input() public id: any;
-  @Input() public name: any;
-  @Input() public classes: any;
-  @Input() public type: any;
-  @Input() public rows: any;
-  @Input() public describeBy: any;
-  @Input() public errorMessage: any;
+  
+  @Input() public id?: string;
+  @Input() public name?: string;
+  @Input() public class?: string;
+  @Input() public type?: string;
+  @Input() public rows?: string = '5';
+  @Input() public maxlength?: number;
+
+  @Input() public enableCharacterCount?: boolean = false;
+  @Input() public maxCharacterRemaining: number = 0;
+  public numCharsRemaining: number = 0;
+
+  @Input() public label!: string;
+  @Input() public labelClass?: string;
+  @Input() public isPageHeading?: boolean = false;
+  @Input() public labelFor?: string;
+
+  @Input() public hint?: string;
+  @Input() public hintClass?: string;
+
+  @Input() public errorText?: string;
+  @Input() public errorClass?: string;
+
   @Input() public model: any;
-  @Input() public maxlength: any;
 
-  // Label parameters
-  @Input() public label_text: any;
-  @Input() public label_classes: any;
-  @Input() public label_isPageHeading: any;
-  @Input() public label_for: any;
+  @Output() modelChange = new EventEmitter();
 
-  // Hint parameters
-  @Input() public hint_text: any;
-  @Input() public hint_classes: any;
+  ngOnInit(){
+    if(this.enableCharacterCount) 
+      this.numCharsRemaining = this.maxCharacterRemaining;
+  }
 
-  // Error parameters
-  @Input() public error_text: any;
-  @Input() public error_classes: any;
+  textareaNgModelChange(event: any) {
+    this.calculateNumCharsRemaining(event);
+    this.modelChange.emit(event)
+  }
 
-  @Output() public modelChange: any;
-
-  constructor() {
-    this.rows = '5';
-    this.modelChange = new EventEmitter();
-    this.maxlength = 50;
+  private calculateNumCharsRemaining(input: string){
+    if(this.enableCharacterCount) 
+      this.numCharsRemaining = this.maxCharacterRemaining - input.length;
   }
 }

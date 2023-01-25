@@ -2,41 +2,35 @@ import { Component, ElementRef, EventEmitter, Input, Output } from '@angular/cor
 
 @Component({
   selector: 'govuk-date-input',
-  templateUrl: './govuk-date-input.component.html',
-  styleUrls: ['./govuk-date-input.component.scss']
+  templateUrl: './govuk-date-input.component.html'
 })
 export class GovukDateInputComponent {
-  @Input() public model: any;
-  @Input() public id: any;
-  @Input() public name: any;
-  @Input() public classes: any;
-  @Input() public describeBy: any;
+  @Input() public id?: string;
+  @Input() public name?: string;
+  @Input() public class?: string;
 
-  // Hint parameters
-  @Input() public hint_text: any;
-  @Input() public hint_classes: any;
+  @Input() public hint?: string;
+  @Input() public hintClass?: string;
 
-  // Error parameters
-  @Input() public error_text: any;
-  @Input() public error_classes: any;
+  @Input() public errorText?: string;
+  @Input() public errorClass?: string;
 
-  // Legend parameters
-  @Input() public text: any;
-  @Input() public fieldset_classes: any;
-  @Input() public fieldset_marginbottom: any;
-  @Input() public isPageHeading: any;
+  @Input() public title?: string;
+  @Input() public titleClass?: string;
+  @Input() public fieldsetMarginBottom?: string;
+  @Input() public isPageHeading?: boolean = false;
 
-  // Link action parameters
-  @Input() public link_action_text: any;
-  @Input() public link_action_action: any;
+  @Input() public linkActionText?: string;
+  @Input() public linkActionAction?: any;
 
-  @Output() public modelChange: EventEmitter<any>;
+  @Output() modelChange  = new EventEmitter();
 
   el: any;
+
+  @Input() public model: any;
 
   constructor(el: ElementRef) {
     this.el = el;
     this.model = { day: "", month: "", year: "" };
-    this.modelChange = new EventEmitter();
   }
 }

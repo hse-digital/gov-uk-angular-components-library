@@ -6,6 +6,5 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./govuk-header.component.scss']
 })
 export class GovukHeaderComponent {
-  @Input() id: any;
-  @Input() serviceName: any;
+  @Input() title?: string;
 }

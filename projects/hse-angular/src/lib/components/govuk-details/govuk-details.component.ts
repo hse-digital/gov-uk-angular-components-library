@@ -2,47 +2,24 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'govuk-details',
-  templateUrl: './govuk-details.component.html',
-  styleUrls: ['./govuk-details.component.scss']
+  templateUrl: './govuk-details.component.html'
 })
 export class GovukDetailsComponent {
 
-  status = '';
+  @Input() public id?: string;
+  @Input() public name?: string;
+  @Input() public class?: string;
+  @Input() public summaryText?: string;
 
-  @Input() id: any;
-  @Input() name: any;
-  @Input() classes: any;
-  @Input() summaryText: any
-  
-  @Output() clicked: any;
-  @Output() opened: any;
-  @Output() closed: any;
+  @Output() clicked = new EventEmitter();
+  @Output() opened = new EventEmitter();
+  @Output() closed = new EventEmitter();
 
-  constructor() {
-    /**
-     * An event emitted when details is clicked, with the current status
-     */
-    this.clicked = new EventEmitter();
-    /**
-     * An event emitted when details is opened.
-     */
-    this.opened = new EventEmitter();
-    /**
-     * An event emitted when details is closed
-     */
-    this.closed = new EventEmitter();
-    this.status = 'closed';
-}
+  isOpen?: boolean = false;
 
   raiseEvents() {
-    if (this.status === 'closed') {
-        this.status = 'opened';
-        this.opened.emit();
-    }
-    else {
-        this.status = 'closed';
-        this.closed.emit();
-    }
-    this.clicked.emit({ status: this.status });
-}
+    this.isOpen ? this.closed.emit() : this.opened.emit();
+    this.isOpen = !this.isOpen;
+    this.clicked.emit({ isOpen: this.isOpen });   
+  }
 }

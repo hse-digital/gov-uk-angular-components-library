@@ -7,11 +7,7 @@ import { Component, Input } from '@angular/core';
 })
 export class GovukHintComponent {
 
-  @Input() public id: any;  
-  @Input() public text: any;
-  @Input() public classes: any;
-
-  constructor() {
-    
-  }
+  @Input() public id?: string;  
+  @Input() public text?: string;
+  @Input() public class?: string;
 }

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'govuk-back-link',
@@ -6,18 +6,9 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./govuk-back-link.component.scss']
 })
 export class GovukBackLinkComponent {
-  @Input() id: any;
-  @Input() href: any;
-  @Input() onBack: any;
-
-  constructor() {
+ 
+  navigateBack() {
+    history.back();
   }
-
-  onClick(event: any){
-    if (this.onBack) {
-      event.preventDefault();
-      this.onBack(event);
-    }
-  };
 
 }

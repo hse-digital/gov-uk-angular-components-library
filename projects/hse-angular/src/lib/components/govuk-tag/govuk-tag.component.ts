@@ -6,10 +6,6 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./govuk-tag.component.scss']
 })
 export class GovukTagComponent {
-  @Input() id: any;
-  @Input() className: any;
-
-  constructor() {
-
-  }
+  @Input() id?: string;
+  @Input() class?: string;
 }

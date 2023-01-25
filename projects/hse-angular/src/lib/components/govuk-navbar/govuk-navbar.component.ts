@@ -1,6 +1,6 @@
-import { Component, ElementRef, Input, Query } from '@angular/core';
+import { Component, ContentChildren, ElementRef, Input, Query, QueryList } from '@angular/core';
 import { Router } from '@angular/router';
-import { GovukNavComponent } from '../govuk-nav/govuk-nav.component';
+import { GovukNavComponent } from './govuk-nav.component';
 
 @Component({
   selector: 'govuk-navbar',
@@ -9,29 +9,30 @@ import { GovukNavComponent } from '../govuk-nav/govuk-nav.component';
 })
 export class GovukNavbarComponent {
 
+  @Input() public id?: string;
+
+  @ContentChildren(GovukNavComponent)
+  public navs!: QueryList<GovukNavComponent>;
+
   constructor(private router: Router, private el: ElementRef) {
   }
-
-  @Input() public id: any;
-
-  navs: GovukNavComponent[] = [];
 
   createId(choice: string) {
     return choice.toLowerCase().replace(/\s/gm, '-') + '-' + this.id;
   }
 
-  onClick($event: any, nav: any, id: any) {
+  onClick($event: any, nav: GovukNavComponent, id: string) {
     $event.preventDefault();
     this.selectNav(nav);
     this.router.navigate([nav.link]);
     this.setFocus(id);
   }
 
-
   setFocus(id: any) {
     this.el.nativeElement.querySelector('#' + id).blur();
   }
-  selectNav(navCurrent: any) {
+
+  selectNav(navCurrent: GovukNavComponent) {
     this.navs.forEach(nav => (nav.active = false));
     navCurrent.active = true;
   }

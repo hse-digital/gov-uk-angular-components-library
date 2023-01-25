@@ -6,11 +6,7 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./govuk-phase-banner.component.scss']
 })
 export class GovukPhaseBannerComponent {
-  @Input() public tag: any;
-  @Input() public classes: any;
-  @Input() public id: any;
-
-  constructor() {
-    this.tag = 'BETA';
-  }
+  @Input() public id?: string;
+  @Input() public tag?: string = 'BETA';
+  @Input() public class?: string;
 }

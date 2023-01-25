@@ -1,0 +1,19 @@
+<form method="POST">
+    <div class="govuk-cookie-banner " data-nosnippet role="region">
+        <div class="govuk-cookie-banner__message govuk-width-container">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds">
+                    <div class="govuk-cookie-banner__content">
+                        <p class="govuk-body">You’ve accepted additional cookies. You can <a class="govuk-link"
+                                href="{{changeCookiesLink}}">change your cookie settings</a> at any time.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="govuk-button-group">
+                <button value="hide" type="submit" name="cookies" class="govuk-button" data-module="govuk-button" (click)="hideCookieMessage($event)">
+                    Hide cookie message
+                </button>
+            </div>
+        </div>
+    </div>
+</form>

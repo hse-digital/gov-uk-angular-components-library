@@ -1,6 +1,3 @@
-<ul class="govuk-list {{classes}}">
-    <li *ngFor="let item of items">
-        <a *ngIf="item.link" href="{{item.link}}">{{item.text}}</a>
-        <span *ngIf="!item.link">{{item.text}}</span>
-    </li>
+<ul class="govuk-list {{class}}">
+    <ng-content></ng-content>
 </ul>

@@ -2,14 +2,9 @@ import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'govuk-warning',
-  templateUrl: './govuk-warning.component.html',
-  styleUrls: ['./govuk-warning.component.scss']
+  templateUrl: './govuk-warning.component.html'
 })
 export class GovukWarningComponent {
-  @Input() public message: any;
-  @Input() public background: any;
-
-  constructor() {
-    this.background = '#FFF3DC';
-  }
+  @Input() public message?: string;
+  @Input() public background?: string = '#FFF3DC';
 }

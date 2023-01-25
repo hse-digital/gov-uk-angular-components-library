@@ -1,11 +1,3 @@
 <dl class="govuk-summary-list">
-    <div class="govuk-summary-list__row" *ngFor="let item of items">
-        <dd class="govuk-summary-list__value">
-            <span *ngIf="!item.link">{{ item.text }}</span>
-            <a *ngIf="item.link" href="{{item.href}}" aria-describedby="eligibility-status">
-                {{ item.text }}
-            </a>
-            <govuk-tag className="{{item.tagClassName}}">{{ item.tagText }}</govuk-tag>
-        </dd>
-    </div>
+    <ng-content></ng-content>
 </dl>

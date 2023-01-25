@@ -7,13 +7,11 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 })
 export class GovukRadioComponent {
 
-  @Input() public id: any;
-  @Input() public groupName: any;
-  @Input() public value: any;
-  @Input() public name: any;
-  @Input() public label_text: any;
-  @Input() public hint_text: any;
-  @Input() public model: any = {};
+  @Input() public id!: string;
+  @Input() public value!: any;
+  @Input() public name!: any;
+  @Input() public label?: string;
+  @Input() public hint?: string;
 
   @Output() public onRadioClicked = new EventEmitter();
 

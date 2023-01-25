@@ -1,0 +1,15 @@
+<govuk-fieldset [id]="id" 
+                [errorText]="errorText" 
+                [errorClass]="errorClasses"
+                [title]="title"
+                [isPageHeading]="isPageHeading" 
+                [titleClass]="titleClass" 
+                [class]="fieldsetMarginBottom"
+                [hintText]="hint" 
+                [hintClass]="hintClass">
+
+    <div class="govuk-checkboxes {{class}}">
+      <ng-content></ng-content>
+    </div>
+  
+  </govuk-fieldset>

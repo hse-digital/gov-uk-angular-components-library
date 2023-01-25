@@ -1,39 +1,32 @@
-import { Component, EventEmitter, Input } from '@angular/core';
+import { Component, ContentChildren, EventEmitter, Input, Output, QueryList } from '@angular/core';
+import { GovukSelectOptionComponent } from './govuk-select-option.component';
 
 @Component({
   selector: 'govuk-select',
-  templateUrl: './govuk-select.component.html',
-  styleUrls: ['./govuk-select.component.scss']
+  templateUrl: './govuk-select.component.html'
 })
 export class GovukSelectComponent {
 
-  @Input() public id:any;
-  @Input() public name:any;
-  @Input() public items:any;
-  @Input() public describeBy:any;
-  @Input() public classes:any;
-  @Input() public model:any;
-  
-  // Label parameters
-  @Input() public label_text: any;
-  @Input() public label_classes: any;
-  @Input() public label_for: any;
-  @Input() public label_isPageHeading: any;
+  @Input() public id?: string;
+  @Input() public name?: string;
 
-  // Hint parameters
-  @Input() public hint_text: any;
-  @Input() public hint_classes: any;
+  @Input() public class?: string;
+  @Input() public model: any;
 
-  // Error parameters
-  @Input() public error_text: any;
-  @Input() public error_classes: any;
+  @Input() public label!: string;
+  @Input() public labelClass?: string;
+  @Input() public labelFor?: string;
+  @Input() public isPageHeading: boolean = false;
 
-  modelChange: EventEmitter<any>;
-  onChange: (value: any) => void;
+  @Input() public hint?: string;
+  @Input() public hintClass?: string;
 
-  constructor() {
-    /** Selected value from the items.value */
-    this.modelChange = new EventEmitter();
-    this.onChange = (event) => this.modelChange.emit(event.target.value);
-}
+  @Input() public errorText?: string;
+  @Input() public errorClass?: string;
+
+  @ContentChildren(GovukSelectOptionComponent)
+  public options!: QueryList<GovukSelectOptionComponent>;
+
+  @Output() modelChange = new EventEmitter();
+  onChange(event: any) { this.modelChange.emit(event.target.value); }
 }

@@ -2,11 +2,10 @@ import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'govuk-error',
-  templateUrl: './govuk-error.component.html',
-  styleUrls: ['./govuk-error.component.scss']
+  templateUrl: './govuk-error.component.html'
 })
 export class GovukErrorComponent {
-  @Input() id: any;
-  @Input() text: any;
-  @Input() classes: any;
+  @Input() public id?: string;
+  @Input() public text?: string;
+  @Input() public class?: string;
 }

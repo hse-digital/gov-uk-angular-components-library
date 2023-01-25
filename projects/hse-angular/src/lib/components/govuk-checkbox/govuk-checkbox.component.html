@@ -1,0 +1,24 @@
+<div class="govuk-checkboxes__item">
+  <input class="govuk-checkboxes__input" 
+         [id]="id + '-' + innerId" 
+         [name]="id + '-' + innerId" 
+         [value]="value" 
+         [(ngModel)]="checked"
+         (ngModelChange)="onClicked.emit()" 
+         type="checkbox">
+
+  <label class="govuk-label govuk-checkboxes__label" 
+         [for]="id + '-' + innerId" 
+         [attr.data-qa]="id + '-' + value.toLowerCase() + '-' + innerId">
+        {{text}}
+  </label>
+
+  <div id="{{id}}-{{value}}" class="govuk-hint govuk-checkboxes__hint">{{hint}}</div>
+
+  <div class="govuk-checkboxes__conditional" 
+       [class.govuk-checkboxes__conditional--hidden]="!checked" id="conditional-{{id}}">
+       <div class="govuk-form-group">
+           <ng-content></ng-content>
+       </div>
+   </div>
+</div>

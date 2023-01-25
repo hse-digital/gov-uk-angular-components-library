@@ -1,0 +1,9 @@
+<ul class="govuk-tabs__list" id="tab-list-{{ id }}">
+    <li *ngFor="let tab of showTabs" class="govuk-tabs__list-item" (click)="onClick($event, tab)"
+        [ngClass]="{ 'govuk-tabs__list-item--selected': tab.active }" id="tab-list-item-{{ tab.id }}">
+
+        <a class="govuk-tabs__tab" href="javascript://" id="tab-link-{{ tab.id }}"> {{ tab.label }} </a>
+    </li>
+</ul>
+
+<ng-content></ng-content>

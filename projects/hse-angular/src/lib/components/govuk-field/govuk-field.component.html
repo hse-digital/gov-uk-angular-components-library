@@ -1,10 +1,10 @@
-<div [govukErrorLine]="error_text" class="govuk-form-group classes">
+<div [govukErrorLine]="errorText" class="govuk-form-group classes">
     <govuk-label  [id]="id" 
-                  [text]="label_text" [classes]="label_classes" 
-                  [isPageHeading]="label_isPageHeading" [for]="label_for"></govuk-label>
+                  [text]="label" [class]="labelClass" 
+                  [isPageHeading]="isPageHeading" [for]="labelFor"></govuk-label>
                   
-    <govuk-hint  [id]="id" [text]="hint_text" [classes]="hint_classes" *ngIf="hint_text"></govuk-hint>
-    <govuk-error [id]="id" [text]="error_text" [classes]="error_classes"></govuk-error>
+    <govuk-hint  [id]="id" [text]="hint" [class]="hintClass" *ngIf="hint"></govuk-hint>
+    <govuk-error [id]="id" [text]="errorText" [class]="errorClass"></govuk-error>
   
     <ng-content></ng-content>
   

@@ -2,20 +2,12 @@ import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'govuk-label',
-  templateUrl: './govuk-label.component.html',
-  styleUrls: ['./govuk-label.component.scss']
+  templateUrl: './govuk-label.component.html'
 })
 export class GovukLabelComponent {
-
-  @Input() id: any;
-  @Input() text: any;
-  @Input() classes: any;
-  @Input() isPageHeading: any;
-  @Input() for: any;
-
-  constructor() {
-    
-  }
+  @Input() id?: string;
+  @Input() text!: string;
+  @Input() class?: string;
+  @Input() isPageHeading?: boolean = false;
+  @Input() for?: string;
 }
-
-export const emptyLabel = () => ({ text: '' });

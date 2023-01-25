@@ -1,5 +1,5 @@
 <h1 class="govuk-label-wrapper" *ngIf="isPageHeading">
-    <label class="govuk-label {{classes}}" id="lbl-{{id}}" [for]="id || for">{{text}}</label>
+    <label class="govuk-label {{class}}" id="lbl-{{id}}" [for]="id || for">{{text}}</label>
 </h1>
 
-<label *ngIf="!isPageHeading" class="govuk-label {{classes}}" id="lbl-{{id}}" for="{{id}}">{{text}}</label>
+<label *ngIf="!isPageHeading" class="govuk-label {{class}}" id="lbl-{{id}}" for="{{id}}">{{text}}</label>

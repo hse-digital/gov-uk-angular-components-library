@@ -1,8 +1,21 @@
-<nav class="app-subnav">
-    <ul class="app-subnav__section">
-        <li *ngFor="let nav of navs" class="app-subnav__section-item " [ngClass]="{'app-subnav__section-item--current': nav.active}">
-            <a class="app-subnav__link  govuk-link govuk-link--no-visited-state" [id]="createId(nav.label)" href="#" (click)="onClick($event, nav, createId(nav.label))" routerLinkActive="active"> {{nav.label}} </a>
-        </li>
+<nav class="app-navigation govuk-clearfix">
+    <div class="govuk-width-container">
+        <ul class="app-navigation__list">
+            <li *ngFor="let nav of navs" class="app-navigation__list-item" 
+                    [ngClass]="{'app-navigation__list-item--current': nav.active}">
 
-    </ul>
+                <a class="govuk-link govuk-link--no-visited-state
+                govuk-link--no-underline app-navigation__link js-app-navigation__link" 
+                    [id]="createId(nav.label)" 
+                    href="#" 
+                    (click)="onClick($event, nav, createId(nav.label))" 
+                    routerLinkActive="active"> 
+                        {{nav.label}} 
+                </a>
+
+            </li>
+        </ul>
+    </div>
 </nav>
+
+<ng-content></ng-content>

@@ -1,5 +1,5 @@
-import { Component, Input } from '@angular/core';
-import { GovukAccordionSectionComponent } from '../govuk-accordion-section/govuk-accordion-section.component';
+import { Component, ContentChildren, Input, QueryList } from '@angular/core';
+import { GovukAccordionSectionComponent } from './govuk-accordion-section.component';
 
 @Component({
   selector: 'govuk-accordion',
@@ -8,26 +8,23 @@ import { GovukAccordionSectionComponent } from '../govuk-accordion-section/govuk
 })
 export class GovukAccordionComponent {
   
-  @Input() public id: any;
+  @Input() public id?: string;
 
-  tabs:GovukAccordionSectionComponent[] = []
-  sectionButtonText;
-  allOpen;
+  @ContentChildren(GovukAccordionSectionComponent)
+  public tabs!: QueryList<GovukAccordionSectionComponent>;
+
+  sectionButtonText?: string = 'Open All';
+  allOpen?: boolean = false;
   
-  constructor() {
-    this.sectionButtonText = 'Open All';
-    this.allOpen = false;
-  }
   toggleAll() {
     if (this.allOpen) {
-      this.tabs.forEach(tab => tab.close());
-      this.allOpen = false;
+      this.tabs.toArray().forEach(tab => tab.close());
       this.sectionButtonText = 'Open All';
     }
     else {
-      this.tabs.forEach(tab => tab.open());
-      this.allOpen = true;
+      this.tabs.toArray().forEach(tab => tab.open());
       this.sectionButtonText = 'Close All';
     }
+    this.allOpen = !this.allOpen;
   }
 }

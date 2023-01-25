@@ -1,0 +1,26 @@
+<div class="govuk-accordion__section" [ngClass]="{'govuk-accordion__section--expanded': active}" id="section-{{id}}">
+
+    <div class="govuk-accordion__section-header">
+
+        <h2 class="govuk-accordion__section-heading" id="section-header-{{id}}">
+
+            <button (click)="expand()" id="section-open-btn-{{id}}" type="button" id="accordion-default-heading-{{id}}"
+                [attr.aria-controls]="'accordion-default-content-' + id" class="govuk-accordion__section-button"
+                aria-expanded="false">
+                {{heading}}
+                <span class="govuk-accordion__icon" aria-hidden="true"></span>
+
+            </button>
+        </h2>
+        <div *ngIf="summary" class="govuk-accordion__section-summary govuk-body govuk-hint"
+            id="accordion-with-summary-sections-summary-{{id}}">
+            {{summary}}
+        </div>
+    </div>
+
+    <div id="accordion-content-{{id}}" class="govuk-accordion__section-content"
+        [attr.aria-labelledby]="'accordion-default-heading-' + id">
+        <ng-content></ng-content>
+    </div>
+
+</div>

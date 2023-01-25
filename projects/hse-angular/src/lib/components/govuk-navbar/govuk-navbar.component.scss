@@ -1,0 +1,101 @@
+@media (min-width: 40.0625em) {
+    .app-navigation {
+        display: block;
+    }
+    
+    .app-navigation__list {
+        position: relative;
+        left: -15px;
+    }
+
+    .app-navigation__list-item {
+        font-family: "GDS Transport",arial,sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        font-weight: 700;
+        font-size: 16px;
+        font-size: 1rem;
+        line-height: 3.125;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        height: 50px;
+        height: 3.125rem;
+        padding: 0 15px;
+        float: left;
+    }
+
+    .app-navigation__link:not([hidden]) {
+        display: inline;
+    }
+
+    .app-navigation__list-item--current {
+        border-bottom: 4px solid #1d70b8;
+    }
+}
+
+@media (min-width: 40.0625em) and (min-width: 40.0625em) {
+    .app-navigation__list-item {
+        font-size: 19px;
+        font-size: 1.1875rem;
+        line-height: 2.6315789474;
+    }
+}
+
+.app-navigation {
+    border-bottom: 1px solid #b1b4b6;
+    background-color: #f8f8f8;
+    margin-top: -10px;
+    border-top: 10px solid #1d70b8;
+}
+
+.govuk-clearfix:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.app-navigation__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.app-navigation__list-item {
+    position: relative;
+}
+
+.app-navigation__link, .app-navigation__button {
+    margin: 15px 0;
+    padding: 0;
+    font-weight: 700;
+    font-size: 19px;
+    font-size: 1.1875rem;
+}
+
+.app-prose-scope a:link, .govuk-link:link {
+    color: #1d70b8;
+}
+
+.govuk-link--no-visited-state:link {
+    color: #1d70b8;
+}
+
+.govuk-link--no-visited-state:hover {
+    color: #003078;
+}
+
+//.app-navigation__link:not([hidden]) {
+//    display: inline-block;
+//}
+
+.govuk-link--no-underline:not(:hover):not(:active) {
+    text-decoration: none;
+}
+
+.app-prose-scope a:hover, .govuk-link:hover {
+    text-decoration-thickness: max(3px, .1875rem, .12em);
+    -webkit-text-decoration-skip-ink: none;
+    text-decoration-skip-ink: none;
+    -webkit-text-decoration-skip: none;
+    text-decoration-skip: none;
+}

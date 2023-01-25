@@ -1,7 +1,8 @@
-<govuk-fieldset [id]="id"
-                [text]="text" [isPageHeading]="isPageHeading" [classes]="fieldset_classes" [fieldset_marginbottom]="fieldset_marginbottom"
-                [hint_text]="hint_text" [hint_classes]="hint_classes"
-                [error_text]="error_text" [error_classes]="error_classes">
+<govuk-fieldset [id]="id" [title]="title" [isPageHeading]="isPageHeading" 
+                [titleClass]="titleClass" [class]="fieldsetMarginBottom"
+                [hintText]="hint" [hintClass]="hintClass"
+                [errorText]="errorText" [errorClass]="errorClass">
+
       <div class="govuk-date-input" id="{{id}}-date-input">
         <div class="govuk-date-input__item">
 
@@ -12,7 +13,7 @@
             </label>
 
             <input class="govuk-input govuk-date-input__input govuk-input--width-2"
-                   [(ngModel)]="model.day"
+                   [(ngModel)]="model.day" (ngModelChange)="this.modelChange.emit(model)"
                    maxlength="2"
                    id="{{id}}-day"
                    name="{{id}}-day"
@@ -27,7 +28,7 @@
             </label>
 
             <input class="govuk-input govuk-date-input__input govuk-input--width-2"
-                   [(ngModel)]="model.month"
+                   [(ngModel)]="model.month" (ngModelChange)="this.modelChange.emit(model)"
                    maxlength="2"
                    id="{{id}}-month"
                    name="{{id}}-month"
@@ -43,7 +44,7 @@
             </label>
 
             <input class="govuk-input govuk-date-input__input govuk-input--width-4"
-                   [(ngModel)]="model.year"
+                   [(ngModel)]="model.year" (ngModelChange)="this.modelChange.emit(model)"
                    maxlength="4"
                    id="{{id}}-year"
                    name="{{id}}-year"
@@ -54,5 +55,5 @@
         </div>
 
       </div>
-      <govuk-link-action [id]="id" [text]="link_action_text" [action]="link_action_action"></govuk-link-action>
+      <govuk-link-action [id]="id" [text]="linkActionText" [action]="linkActionAction"></govuk-link-action>
     </govuk-fieldset>

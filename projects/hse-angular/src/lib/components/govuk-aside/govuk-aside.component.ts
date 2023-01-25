@@ -6,9 +6,5 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./govuk-aside.component.scss']
 })
 export class GovukAsideComponent {
-  @Input() public subsection_title: string;
-
-  constructor(){
-    this.subsection_title = '';
-  }
+  @Input() public subsectionTitle: string = '';
 }

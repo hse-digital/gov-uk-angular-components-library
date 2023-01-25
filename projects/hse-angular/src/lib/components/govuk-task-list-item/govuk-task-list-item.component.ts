@@ -6,6 +6,6 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./govuk-task-list-item.component.scss']
 })
 export class GovukTaskListItemComponent {
-  @Input() public section_number: any;
-  @Input() public text: any;
+  @Input() public section_number?: string;
+  @Input() public text?: string;
 }
