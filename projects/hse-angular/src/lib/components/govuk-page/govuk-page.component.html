@@ -1,7 +1,9 @@
 <govuk-header [title]="headerTitle" />
 
 <div class="govuk-width-container">
-    <ng-content />
+    <div class="govuk-main-wrapper" id="main-content">
+        <ng-content />
+    </div>
 </div>
 
 <govuk-footer />
