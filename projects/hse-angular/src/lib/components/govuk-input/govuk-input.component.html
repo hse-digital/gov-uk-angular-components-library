@@ -11,6 +11,7 @@
                      [ngClass]="{'govuk-input--error' : errorText}"
                      [attr.maxlength]="maxlength"
                      [attr.type]="type"
+                     [(ngModel)]="model"
                      (ngModelChange)="modelChange.emit($event)" 
                      (focus)="onInputFocus.emit($event)"
                      (blur)="onInputBlur.emit($event)"
