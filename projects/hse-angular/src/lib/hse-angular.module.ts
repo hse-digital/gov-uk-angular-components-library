@@ -61,6 +61,7 @@ import { ArrowRightIcon } from "./icons/arrow-right.icon";
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { GovukErrorLinkComponent, GovukErrorSummaryComponent } from './components/govuk-error-summary/govuk-error-summary.component';
 
 const components = [
   GovukButtonComponent,
@@ -111,6 +112,8 @@ const components = [
   GovukNotificationBannerComponent,
   GovukCookieBannerComponent,
   GovukCookieBannerAcceptedComponent,
+  GovukErrorSummaryComponent,
+  GovukErrorLinkComponent
 ]
 
 const directives = [
