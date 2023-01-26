@@ -11,6 +11,8 @@ export class GovukInputComponent {
   @Input() public class?: string;
   @Input() public type?: string;
   @Input() public maxlength?: number = 50;
+  @Input() public suffix?: string;
+  @Input() public prefix?: string;
   
   @Output() modelChange = new EventEmitter();
   @Output() onInputBlur = new EventEmitter();

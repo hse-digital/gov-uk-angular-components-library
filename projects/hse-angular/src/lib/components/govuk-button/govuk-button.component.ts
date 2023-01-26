@@ -2,8 +2,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'govuk-button',
-  templateUrl: './govuk-button.component.html',
-  styleUrls: ['./govuk-button.component.scss']
+  templateUrl: './govuk-button.component.html'
 })
 export class GovukButtonComponent {
 

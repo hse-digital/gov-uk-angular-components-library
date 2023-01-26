@@ -3,18 +3,21 @@
              [label]="label" [labelClass]="labelClass" 
              [isPageHeading]="isPageHeading" [labelFor]="labelFor">
 
-    <input id='input-{{id}}'
-           [attr.name]="name || id"
-           class="govuk-input {{class}}"
-           [ngClass]="{'govuk-input--error' : errorText}"
-           [attr.maxlength]="maxlength"
-           [attr.type]="type"
-           [(ngModel)]="model"
-           (ngModelChange)="modelChange.emit($event)" 
-           (focus)="onInputFocus.emit($event)"
-           (blur)="onInputBlur.emit($event)"
-           (submit)="onInputSubmit.emit($event)"
-           (scroll)="onInputScroll.emit($event)">
+       <div class="govuk-input__wrapper">
+              <div class="govuk-input__prefix" *ngIf="prefix" aria-hidden="true">{{prefix}}</div>
+              <input id='input-{{id}}'
+                     [attr.name]="name || id"
+                     class="govuk-input {{class}}"
+                     [ngClass]="{'govuk-input--error' : errorText}"
+                     [attr.maxlength]="maxlength"
+                     [attr.type]="type"
+                     (ngModelChange)="modelChange.emit($event)" 
+                     (focus)="onInputFocus.emit($event)"
+                     (blur)="onInputBlur.emit($event)"
+                     (submit)="onInputSubmit.emit($event)"
+                     (scroll)="onInputScroll.emit($event)">              
+              <div class="govuk-input__suffix" *ngIf="suffix" aria-hidden="true">{{suffix}}</div>
+       </div>
   
     <govuk-link-action id='linkAction-{{id}}'  [text]="linkActionText" [action]="linkActionAction"></govuk-link-action>
   
