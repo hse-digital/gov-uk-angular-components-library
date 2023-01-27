@@ -9,5 +9,5 @@ export class GovukHintComponent {
 
   @Input() public id?: string;  
   @Input() public text?: string;
-  @Input() public class?: string;
+  @Input() public classes?: string;
 }

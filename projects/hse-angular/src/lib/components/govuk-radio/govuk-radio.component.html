@@ -3,7 +3,7 @@
     <input id="{{id}}-input" #radio name="{{name}}" (change)="clicked()" [value]="value" type="radio" class="govuk-radios__input" tabindex="0">
     <label id="{{id}}-label" class="govuk-label govuk-radios__label" for="{{id}}-input">{{label}}</label>
 
-    <govuk-hint id="radio-item-{{id}}" [text]="hint" class="govuk-radios__hint"></govuk-hint>
+    <govuk-hint id="radio-item-{{id}}" [text]="hint" classes="govuk-radios__hint"></govuk-hint>
 
     <div class="govuk-radios__conditional" [class.govuk-radios__conditional--hidden]="!radio.checked" id="conditional-{{id}}">
         <div class="govuk-form-group">
