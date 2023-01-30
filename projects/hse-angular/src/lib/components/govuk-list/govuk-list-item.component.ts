@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'govuk-list-item',
-  templateUrl: './govuk-list-item.component.html'
+  template: ''
 })
 export class GovukListItemComponent {
   @Input() public link?: string;

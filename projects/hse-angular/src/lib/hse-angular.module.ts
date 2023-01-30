@@ -40,7 +40,7 @@ import { GovukTabGroupComponent } from './components/govuk-tabs/govuk-tab-group.
 import { GovukBreadcrumbComponent } from './components/govuk-breadcrumb/govuk-breadcrumb.component';
 import { GovukPageComponent } from './components/govuk-page/govuk-page.component';
 import { GovukCheckboxComponent } from './components/govuk-checkbox/govuk-checkbox.component';
-import { GovukListItemComponent } from './components/govuk-list-item/govuk-list-item.component';
+import { GovukListItemComponent } from './components/govuk-list/govuk-list-item.component';
 import { GovukSummaryListRowComponent } from './components/govuk-summary-list/govuk-summary-list-row.component';
 import { GovukSelectOptionComponent } from './components/govuk-select/govuk-select-option.component';
 import { AbsoluteValuePipe, GovukCharacterCountComponent } from './components/govuk-character-count/govuk-character-count.component';

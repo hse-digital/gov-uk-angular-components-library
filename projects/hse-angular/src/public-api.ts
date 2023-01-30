@@ -39,7 +39,7 @@ export * from './lib/components/govuk-tabs/govuk-tab-group.component';
 export * from './lib/components/govuk-breadcrumb/govuk-breadcrumb.component';
 export * from './lib/components/govuk-page/govuk-page.component';
 export * from './lib/components/govuk-checkbox/govuk-checkbox.component';
-export * from './lib/components/govuk-list-item/govuk-list-item.component';
+export * from './lib/components/govuk-list/govuk-list-item.component';
 export * from './lib/components/govuk-summary-list/govuk-summary-list-row.component';
 export * from './lib/components/govuk-select/govuk-select-option.component';
 export * from './lib/components/govuk-character-count/govuk-character-count.component';
