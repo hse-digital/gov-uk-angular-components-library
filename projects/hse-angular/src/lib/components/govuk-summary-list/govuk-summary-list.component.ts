@@ -8,6 +8,7 @@ import { GovukSummaryListRowComponent } from './govuk-summary-list-row.component
 })
 export class GovukSummaryListComponent implements AfterViewInit {
   @Input() public id?: string;
+  @Input() public classes?: string;
   
   @ContentChildren(GovukSummaryListRowComponent)
   private rows!: QueryList<GovukSummaryListRowComponent>;
