@@ -7,4 +7,5 @@ import { Component, Input } from '@angular/core';
 export class GovukListItemComponent {
   @Input() public link?: string;
   @Input() public text?: string;
+  @Input() public newTab: boolean = false;
 }
