@@ -6,10 +6,10 @@
         <dd class="govuk-summary-list__value">
             <ng-container *ngTemplateOutlet="item.template" />
         </dd>
-        <dd class="govuk-summary-list__actions" *ngIf="item.link">
-            <a class="govuk-link" [href]="item.link">
+        <dd class="govuk-summary-list__actions" *ngIf="item.showAction">
+            <span class="govuk-link" (click)="item.onClick.emit()">
                 {{item.actionText}}<span class="govuk-visually-hidden">{{item.actionDetails}}</span>
-            </a>
+            </span>
         </dd>
     </div>
 </dl>

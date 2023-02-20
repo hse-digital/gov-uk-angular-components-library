@@ -12,6 +12,7 @@ export class GovukRadioComponent {
   @Input() public name!: any;
   @Input() public label?: string;
   @Input() public hint?: string;
+  @Input() public model?: any;
 
   @Output() public onRadioClicked = new EventEmitter();
 
