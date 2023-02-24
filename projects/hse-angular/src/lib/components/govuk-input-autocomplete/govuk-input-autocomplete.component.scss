@@ -1,0 +1,19 @@
+.autocomplete-list {
+    div  {       
+        font-family: "GDS Transport", arial, sans-serif;
+        background-color: #fafafa;
+        border-bottom: #b2b4b6 0.8px solid;
+        padding: 5px;
+        color: #0b0c0c;
+
+        &.selected-item {
+            background-color: #1f70b8;
+            color: white;
+        }  
+        
+        &.no-border-bottom {
+            border-bottom: none !important;
+        }
+    }
+    border: 2px solid #0b0c0c;
+}

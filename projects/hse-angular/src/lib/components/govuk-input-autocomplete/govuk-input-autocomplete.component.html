@@ -1,0 +1,31 @@
+<p>govuk-input-autocomplete works!</p>
+<govuk-field id='field-{{id}}' [hint]="hint" [hintClass]="hintClass" [errorText]="errorText" [errorClass]="errorClass"
+  [label]="label" [labelClass]="labelClass" [isPageHeading]="isPageHeading" [labelFor]="labelFor">
+
+  <input id='input-{{id}}' [attr.name]="name || id" class="govuk-input {{class}}"
+    [ngClass]="{'govuk-input--error' : errorText}" 
+    [attr.maxlength]="maxlength" 
+    [attr.type]="type" 
+    [(ngModel)]="model"
+    (ngModelChange)="onInputModelChange($event)" 
+    (focus)="onInputOnFocus($event)" 
+    (blur)="onInputOnBlur($event)"
+    (submit)="onInputSubmit.emit($event)" 
+    (scroll)="onInputScroll.emit($event)" 
+    (keyup.arrowdown)="onArrowDown()"
+    (keyup.arrowup)="onArrowUp()" 
+    (keydown.tab)="onTab($event)" 
+    (keyup.enter)="onEnter()" #input/>
+
+  <div *ngIf="showAutocomplete && autocompleteValues?.length && model?.length >= inputMinimunLength"
+    class="autocomplete-list">
+    <div *ngFor="let item of values; let i = index;" [ngClass]="autocompleteListStyle(i)">
+      <span id="autocomplete-option-{{i}}" [ngClass]="selectedIndex == i ? 'selected-option' : 'option'">
+        {{item}}
+      </span>
+    </div>
+  </div>
+
+  <govuk-link-action id='linkAction-{{id}}' [text]="linkActionText" [action]="linkActionAction"></govuk-link-action>
+
+</govuk-field>
