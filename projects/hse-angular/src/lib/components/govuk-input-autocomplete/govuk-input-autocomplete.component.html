@@ -1,4 +1,3 @@
-<p>govuk-input-autocomplete works!</p>
 <govuk-field id='field-{{id}}' [hint]="hint" [hintClass]="hintClass" [errorText]="errorText" [errorClass]="errorClass"
   [label]="label" [labelClass]="labelClass" [isPageHeading]="isPageHeading" [labelFor]="labelFor">
 
@@ -15,9 +14,9 @@
     (keyup.arrowdown)="onArrowDown()"
     (keyup.arrowup)="onArrowUp()" 
     (keydown.tab)="onTab($event)" 
-    (keyup.enter)="onEnter()" #input/>
+    (keyup.enter)="onEnter()" />
 
-  <div *ngIf="showAutocomplete && autocompleteValues?.length && model?.length >= inputMinimunLength"
+  <div *ngIf="showAutocomplete && autocompleteValues?.length && model?.length >= minimunNumberCharactersForAutocomplete"
     class="autocomplete-list">
     <div *ngFor="let item of values; let i = index;" [ngClass]="autocompleteListStyle(i)">
       <span id="autocomplete-option-{{i}}" [ngClass]="selectedIndex == i ? 'selected-option' : 'option'">

@@ -1,5 +1,5 @@
-import { Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
-import { debounceTime, fromEvent } from 'rxjs';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { debounceTime } from 'rxjs';
 
 @Component({
   selector: 'govuk-input-autocomplete',
@@ -19,6 +19,7 @@ export class GovukInputAutocompleteComponent implements OnInit {
   @Output() onInputFocus = new EventEmitter();
   @Output() onInputSubmit = new EventEmitter();
   @Output() onInputScroll = new EventEmitter();
+  @Output() onDebounce = new EventEmitter();
 
   @Input() public label!: string;
   @Input() public labelClass?: string;
@@ -46,24 +47,20 @@ export class GovukInputAutocompleteComponent implements OnInit {
   @Input() public debounceFunction?: any;
   @Input() public debounceTimer: number = 2000;
   
-  @Input() public inputMinimunLength: number = 0;
+  @Input() public minimunNumberCharactersForAutocomplete: number = 0;
   
   @Output() public onSelectedValue = new EventEmitter();
 
   ngOnInit(){
     if(this.autocompleteValues) this.values = this.autocompleteValues;
-    if(this.debounceFunction) {
-      this._subscribeWithDebounceToInputModelChange();
-    }
+    this._subscribeWithDebounceToInputModelChange();
   }  
 
   private _subscribeWithDebounceToInputModelChange(){
     this.modelChange.pipe(
       debounceTime(this.debounceTimer)
     ).subscribe(() => {
-      console.log("before autocompleteValue", this.autocompleteValues);
-      this.debounceFunction();
-      console.log("after autocompleteValue", this.autocompleteValues);
+      this.onDebounce.emit();
     })
   }
 
@@ -124,7 +121,7 @@ export class GovukInputAutocompleteComponent implements OnInit {
 
   private _filterValues(value: string){
     if(this.autocompleteValues)
-      this.values = this.autocompleteValues.filter(x => x.toLocaleLowerCase().startsWith(value.toLocaleLowerCase()));
+      this.values = this.autocompleteValues.filter(x => x.toLocaleLowerCase()?.startsWith(value?.toLocaleLowerCase())) ?? [];
   }
 
   private _getCurrentSelectedValue(){
