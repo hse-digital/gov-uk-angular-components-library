@@ -6,7 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./govuk-back-link.component.scss']
 })
 export class GovukBackLinkComponent {
- 
+  
+  onKeyEnter() {
+    this.navigateBack();
+  }
+
   navigateBack() {
     history.back();
   }

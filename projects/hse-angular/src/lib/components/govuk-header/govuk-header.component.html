@@ -9,7 +9,8 @@
                     </svg><span class="govuk-header__logotype-text">GOV.UK</span></span>
             </a>
         </div>
-        <div class="govuk-header__content"><a href="#" class="govuk-header__link govuk-header__link--service-name">{{title}}</a>
+        <div class="govuk-header__content">
+            <a *ngIf="title" href="#" class="govuk-header__link govuk-header__link--service-name">{{title}}</a>
         </div>
     </div>
 </header>

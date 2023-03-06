@@ -11,7 +11,7 @@ export class GovukErrorSummaryComponent {
 
 @Component({
   selector: 'govuk-error-link',
-  template: `<li><a (click)="scrollToAnchor()">{{message}}</a></li>`
+  template: `<li><a (click)="scrollToAnchor()" (keyup.enter)="scrollToAnchor()" tabindex="0">{{message}}</a></li>`
 })
 export class GovukErrorLinkComponent {
   @Input() anchorId?: string;

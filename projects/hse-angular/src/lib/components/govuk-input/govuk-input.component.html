@@ -1,7 +1,7 @@
 <govuk-field id='field-{{id}}' [hint]="hint" [hintClass]="hintClass"
              [errorText]="errorText" [errorClass]="errorClass"
              [label]="label" [labelClass]="labelClass" 
-             [isPageHeading]="isPageHeading" [labelFor]="labelFor">
+             [isPageHeading]="isPageHeading" labelFor="input-{{id}}">
 
        <div class="govuk-input__wrapper">
               <div class="govuk-input__prefix" *ngIf="prefix" aria-hidden="true">{{prefix}}</div>

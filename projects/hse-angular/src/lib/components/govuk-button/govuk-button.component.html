@@ -7,7 +7,9 @@
    [class.govuk-button--disabled]="disabled"
    (click)="onClick.emit($event)"
    (focus)="onFocus.emit($event)"
-   (blur)="onBlur.emit($event)">
+   (blur)="onBlur.emit($event)"
+   (keyup.enter)="onClick.emit($event)"
+   tabindex="0">
 
   <span *ngIf="!isLoading">
     <ng-content></ng-content>
