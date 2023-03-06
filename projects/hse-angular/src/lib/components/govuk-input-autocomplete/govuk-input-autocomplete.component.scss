@@ -1,16 +1,21 @@
 .autocomplete-list {
-    div  {       
+    z-index: 1;
+    position: absolute;
+
+    div {
         font-family: "GDS Transport", arial, sans-serif;
         background-color: #fafafa;
         border-bottom: #b2b4b6 0.8px solid;
         padding: 5px;
         color: #0b0c0c;
 
-        &.selected-item {
+        &.selected-item,
+        &:hover {
             background-color: #1f70b8;
             color: white;
-        }  
-        
+            cursor: pointer;
+        }
+
         &.no-border-bottom {
             border-bottom: none !important;
         }

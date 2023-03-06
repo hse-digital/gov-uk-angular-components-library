@@ -13,12 +13,9 @@ export class GovukInputAutocompleteComponent implements OnInit {
   @Input() public class?: string;
   @Input() public type?: string;
   @Input() public maxlength?: number = 50;
-  
-  @Output() modelChange = new EventEmitter();
-  @Output() onInputBlur = new EventEmitter();
-  @Output() onInputFocus = new EventEmitter();
-  @Output() onInputSubmit = new EventEmitter();
-  @Output() onInputScroll = new EventEmitter();
+  @Input() values: string[] = [];
+  @Input() model?: string;
+
   @Output() onDebounce = new EventEmitter();
 
   @Input() public label!: string;
@@ -35,102 +32,89 @@ export class GovukInputAutocompleteComponent implements OnInit {
   @Input() public linkActionText?: string;
   @Input() public linkActionAction?: any;
 
-  @Input() public model: any;
+  @Input() searchFunction?: Promise<string[]>;
 
-
-  
   showAutocomplete = false;
   selectedIndex: number = 0;
-  values: string[] = [];
+  modelChange = new EventEmitter();
 
-  @Input() public autocompleteValues!: string[];
-  @Input() public debounceFunction?: any;
-  @Input() public debounceTimer: number = 2000;
-  
-  @Input() public minimunNumberCharactersForAutocomplete: number = 0;
-  
   @Output() public onSelectedValue = new EventEmitter();
 
-  ngOnInit(){
-    if(this.autocompleteValues) this.values = this.autocompleteValues;
-    this._subscribeWithDebounceToInputModelChange();
-  }  
-
-  private _subscribeWithDebounceToInputModelChange(){
-    this.modelChange.pipe(
-      debounceTime(this.debounceTimer)
-    ).subscribe(() => {
-      this.onDebounce.emit();
-    })
+  ngOnInit() {
+    this.subscribeWithDebounceToInputModelChange();
   }
 
-  onInputOnBlur(event: any){
-    this.showAutocomplete = false;
-    let value = this._getCurrentSelectedValue();
-    this._setNewSelectedValue(value);
-    this.onInputBlur.emit(event)
+  onInputOnBlur() {
+    if (!this.clickingItem) {
+      this.showAutocomplete = false;
+    }
   }
 
-  onInputOnFocus(event: any){
+  onInputOnFocus() {
     this.showAutocomplete = true;
-    this.onInputFocus.emit(event);
   }
 
-  onInputModelChange(value: any) {
-    this._filterValues(value);
+  onInputModelChange() {
     this.selectedIndex = 0;
-    this.showAutocomplete = this.values.length != 0;
-    this.modelChange.emit(value);
+    this.modelChange.emit();
   }
 
-  onArrowDown(){
-    if(this.selectedIndex < this.values.length - 1) this.selectedIndex++;
+  onArrowDown() {
+    if (this.showAutocomplete && this.selectedIndex < this.values.length - 1) {
+      this.selectedIndex++;
+    }
+
+    if (this.values) {
+      this.showAutocomplete = true;
+    }
   }
 
-  onArrowUp(){
-    if(this.selectedIndex > 0) this.selectedIndex--;
+  onArrowUp() {
+    if (this.selectedIndex > 0) {
+      this.selectedIndex--;
+    }
+
+    if (this.showAutocomplete && this.values) {
+      this.showAutocomplete = true;
+    }
   }
-  
+
   onTab(event: any) {
     event.preventDefault();
-    this.showAutocomplete = false;
-    let value = this._getCurrentSelectedValue();
-    this._setNewSelectedValue(value);
+    this.setNewSelectedValue();
   }
 
   onEnter() {
-    this.showAutocomplete = false;
-    let value = this._getCurrentSelectedValue();
-    this._setNewSelectedValue(value);
+    this.setNewSelectedValue();
   }
 
-  // Not implemented yet.
-  clickOnAutocomplete(i: number){
+  clickingItem = false;
+  clickOnAutocomplete(i: number) {
+    this.clickingItem = true;
     this.selectedIndex = i;
-    this.showAutocomplete = false;
-    let value = this._getCurrentSelectedValue();
-    this._setNewSelectedValue(value);
+    this.setNewSelectedValue();
+    this.clickingItem = false;
   }
 
-  private _setNewSelectedValue(value: string){
-    this.selectedIndex = 0;
+  autocompleteListStyle(i: number) {
+    let classStyle = this.selectedIndex == i ? 'selected-item' : ''
+    return classStyle + (this.values.length - 1 == i ? ' no-border-bottom' : '');
+  }
+
+  private setNewSelectedValue() {
+    var value = this.values[this.selectedIndex];
     this.model = value;
-    this._filterValues(value);
+    this.showAutocomplete = false;
     this.onSelectedValue.emit(value);
   }
 
-  private _filterValues(value: string){
-    if(this.autocompleteValues)
-      this.values = this.autocompleteValues.filter(x => x.toLocaleLowerCase()?.startsWith(value?.toLocaleLowerCase())) ?? [];
-  }
-
-  private _getCurrentSelectedValue(){
-    return this.values[this.selectedIndex];
-  }
-
-  autocompleteListStyle(i: number){
-    let classStyle = this.selectedIndex == i ? 'selected-item' : ''
-    return classStyle + (this.values.length - 1 == i ? ' no-border-bottom' : '');
+  private subscribeWithDebounceToInputModelChange() {
+    this.modelChange.pipe(debounceTime(500)).subscribe(async () => {
+      if (this.model && this.model.length > 2) {
+        this.values = [];
+        this.onDebounce.emit(this.model);
+      }
+    })
   }
 
 }

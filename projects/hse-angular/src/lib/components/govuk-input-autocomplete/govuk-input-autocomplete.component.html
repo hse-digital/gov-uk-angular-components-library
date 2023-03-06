@@ -6,19 +6,16 @@
     [attr.maxlength]="maxlength" 
     [attr.type]="type" 
     [(ngModel)]="model"
-    (ngModelChange)="onInputModelChange($event)" 
-    (focus)="onInputOnFocus($event)" 
-    (blur)="onInputOnBlur($event)"
-    (submit)="onInputSubmit.emit($event)" 
-    (scroll)="onInputScroll.emit($event)" 
+    (ngModelChange)="onInputModelChange()" 
+    (focus)="onInputOnFocus()" 
+    (blur)="onInputOnBlur()"
     (keyup.arrowdown)="onArrowDown()"
     (keyup.arrowup)="onArrowUp()" 
     (keydown.tab)="onTab($event)" 
     (keyup.enter)="onEnter()" />
 
-  <div *ngIf="showAutocomplete && autocompleteValues?.length && model?.length >= minimunNumberCharactersForAutocomplete"
-    class="autocomplete-list">
-    <div *ngFor="let item of values; let i = index;" [ngClass]="autocompleteListStyle(i)">
+  <div *ngIf="showAutocomplete && values.length > 0" class="autocomplete-list">
+    <div *ngFor="let item of values; let i = index;" [ngClass]="autocompleteListStyle(i)" (click)="clickOnAutocomplete(i)" (mousedown)="clickingItem = true">
       <span id="autocomplete-option-{{i}}" [ngClass]="selectedIndex == i ? 'selected-option' : 'option'">
         {{item}}
       </span>
