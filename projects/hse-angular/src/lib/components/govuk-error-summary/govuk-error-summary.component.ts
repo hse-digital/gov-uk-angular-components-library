@@ -1,12 +1,22 @@
 import { ViewportScroller } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, Input, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'govuk-error-summary',
   templateUrl: './govuk-error-summary.component.html'
 })
-export class GovukErrorSummaryComponent {
+export class GovukErrorSummaryComponent implements AfterViewInit {
+  @ViewChild("errorSummnaryDiv") errorSummary?: ElementRef;
   @Input() title!: String;
+  @Input() autofocus: boolean = true;
+
+  ngAfterViewInit(): void {
+    if(this.autofocus) this.focus();
+  }  
+  
+  public focus() {    
+    this.errorSummary?.nativeElement.focus(); 
+  }
 }
 
 @Component({
