@@ -16,7 +16,8 @@
                      (focus)="onInputFocus.emit($event)"
                      (blur)="onInputBlur.emit($event)"
                      (submit)="onInputSubmit.emit($event)"
-                     (scroll)="onInputScroll.emit($event)">              
+                     (scroll)="onInputScroll.emit($event)"
+                     (keyup.enter)="onKeyupEnter.emit($event)">              
               <div class="govuk-input__suffix" *ngIf="suffix" aria-hidden="true">{{suffix}}</div>
        </div>
   

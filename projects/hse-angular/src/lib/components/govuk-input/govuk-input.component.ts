@@ -19,6 +19,7 @@ export class GovukInputComponent {
   @Output() onInputFocus = new EventEmitter();
   @Output() onInputSubmit = new EventEmitter();
   @Output() onInputScroll = new EventEmitter();
+  @Output() onKeyupEnter = new EventEmitter();
 
   @Input() public label!: string;
   @Input() public labelClass?: string;

@@ -15,6 +15,7 @@ export class GovukRadioComponent {
   @Input() public model?: any;
 
   @Output() public onRadioClicked = new EventEmitter();
+  @Output() public onKeyupEnter = new EventEmitter();
 
   clicked() {
     this.onRadioClicked.emit(this.value);
