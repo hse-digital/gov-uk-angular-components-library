@@ -2,8 +2,8 @@
     <fieldset class="govuk-fieldset {{class}}">
 
         <legend class="govuk-fieldset__legend {{titleClass}}" id="fieldset-{{id}}">
-            <h1 *ngIf="isPageHeading" class="govuk-fieldset__heading"> {{title}} </h1>
-            <h2 *ngIf="!isPageHeading" class="govuk-fieldset__heading"> {{title}} </h2>
+            <h1 *ngIf="isPageHeading && title" class="govuk-fieldset__heading"> {{title}} </h1>
+            <h2 *ngIf="!isPageHeading && title" class="govuk-fieldset__heading"> {{title}} </h2>
         </legend>
 
         <govuk-hint *ngIf="hintText" [id]="id" [text]="hintText" [classes]="hintClass"></govuk-hint>
