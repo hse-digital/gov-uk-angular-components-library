@@ -10,6 +10,7 @@ export class GovukSummaryListRowComponent {
   @Input() public actionDetails?: string;
   @Input() public showAction = false;
   @Output() public onClick = new EventEmitter();
+  @Output() public onKeyupEnter = new EventEmitter();
 
   @ViewChild(TemplateRef)
   template!: TemplateRef<any>;

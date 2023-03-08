@@ -7,7 +7,7 @@
             <ng-container *ngTemplateOutlet="item.template" />
         </dd>
         <dd class="govuk-summary-list__actions" *ngIf="item.showAction">
-            <span class="govuk-link" (click)="item.onClick.emit()">
+            <span class="govuk-link" (click)="item.onClick.emit()" (keyup.enter)="item.onKeyupEnter.emit()" tabindex="0">
                 {{item.actionText}}<span class="govuk-visually-hidden">{{item.actionDetails}}</span>
             </span>
         </dd>
