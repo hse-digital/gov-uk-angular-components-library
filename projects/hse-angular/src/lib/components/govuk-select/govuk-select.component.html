@@ -1,9 +1,9 @@
-<govuk-field [id]="id" [label]="label" [labelClass]="labelClass"
+<govuk-field id="field-{{id}}" [label]="label" [labelClass]="labelClass"
              [isPageHeading]="isPageHeading" [labelFor]="labelFor" 
              [hint]="hint" [hintClass]="hintClass"
              [errorText]="errorText" [errorClass]="errorClass">
 
-    <select [id]="id" [attr.name]="name || id" class="govuk-select {{ class }}"
+    <select id="select-{{id}}" [attr.name]="name || id" class="govuk-select {{ class }}"
         [ngClass]="{ 'govuk-select--error': errorText }" [ngModel]="model"
         (change)="onChange($event)">
 

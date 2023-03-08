@@ -6,8 +6,8 @@
             <h2 *ngIf="!isPageHeading && title" class="govuk-fieldset__heading"> {{title}} </h2>
         </legend>
 
-        <govuk-hint *ngIf="hintText" [id]="id" [text]="hintText" [classes]="hintClass"></govuk-hint>
-        <govuk-error [id]="id" [text]="errorText" [class]="errorClass"></govuk-error>
+        <govuk-hint *ngIf="hintText" id="hint-{{id}}" [text]="hintText" [classes]="hintClass"></govuk-hint>
+        <govuk-error id="error-{{id}}" [text]="errorText" [class]="errorClass"></govuk-error>
 
         <ng-content></ng-content>
 
