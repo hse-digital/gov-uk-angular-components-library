@@ -5,7 +5,8 @@
          [value]="value" 
          [(ngModel)]="checked"
          (ngModelChange)="onClicked.emit()" 
-         type="checkbox">
+         type="checkbox"
+         (keyup.enter)="onKeyupEnter.emit()">
 
   <label class="govuk-label govuk-checkboxes__label" 
          [for]="id + '-' + innerId" 

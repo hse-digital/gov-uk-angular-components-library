@@ -13,6 +13,7 @@ export class GovukCheckboxComponent implements OnChanges {
     @Input() model!: string[];
 
     @Output() onClicked = new EventEmitter();
+    @Output() onKeyupEnter = new EventEmitter();
     
     innerId: string = (Math.random() + 1).toString(36).substring(7);
     checked = false;
