@@ -1,6 +1,6 @@
 {
   "name": "hse-angular",
-  "version": "0.0.51",
+  "version": "0.0.52",
   "peerDependencies": {
     "@angular/common": "^15.1.5",
     "@angular/core": "^15.1.5"
