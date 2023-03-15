@@ -17,6 +17,7 @@ export class GovukInputAutocompleteComponent implements OnInit {
   @Input() model?: string;
 
   @Output() onDebounce = new EventEmitter();
+  @Output() modelChange = new EventEmitter();
 
   @Input() public label!: string;
   @Input() public labelClass?: string;
@@ -36,7 +37,6 @@ export class GovukInputAutocompleteComponent implements OnInit {
 
   showAutocomplete = false;
   selectedIndex: number = 0;
-  modelChange = new EventEmitter();
 
   @Output() public onSelectedValue = new EventEmitter();
 
@@ -56,7 +56,7 @@ export class GovukInputAutocompleteComponent implements OnInit {
 
   onInputModelChange() {
     this.selectedIndex = 0;
-    this.modelChange.emit();
+    this.modelChange.emit(this.model);
   }
 
   onArrowDown() {
@@ -110,7 +110,7 @@ export class GovukInputAutocompleteComponent implements OnInit {
 
   private subscribeWithDebounceToInputModelChange() {
     this.modelChange.pipe(debounceTime(500)).subscribe(async () => {
-      if (this.model && this.model.length > 2) {
+      if (this.model || this.model == '') {
         this.values = [];
         this.onDebounce.emit(this.model);
       }
