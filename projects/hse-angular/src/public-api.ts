@@ -46,7 +46,7 @@ export * from './lib/components/govuk-character-count/govuk-character-count.comp
 export * from './lib/components/govuk-inset-text/govuk-inset-text.component';
 export * from './lib/components/govuk-notification-banner/govuk-notification-banner.component';
 export * from './lib/components/govuk-cookie-banner/govuk-cookie-banner.component';
-export * from './lib/components/govuk-cookie-banner/govuk-cookie-banner-accepted.component';
+export * from './lib/components/govuk-cookie-banner/govuk-cookie-banner-confirmation.component';
 export * from './lib/components/govuk-error-summary/govuk-error-summary.component';
 export * from './lib/components/govuk-input-autocomplete/govuk-input-autocomplete.component';
 

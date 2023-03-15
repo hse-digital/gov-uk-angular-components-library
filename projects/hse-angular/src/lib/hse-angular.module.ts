@@ -47,7 +47,7 @@ import { AbsoluteValuePipe, GovukCharacterCountComponent } from './components/go
 import { GovukInsetTextComponent } from './components/govuk-inset-text/govuk-inset-text.component';
 import { GovukNotificationBannerComponent } from './components/govuk-notification-banner/govuk-notification-banner.component';
 import { GovukCookieBannerComponent } from './components/govuk-cookie-banner/govuk-cookie-banner.component';
-import { GovukCookieBannerAcceptedComponent } from './components/govuk-cookie-banner/govuk-cookie-banner-accepted.component';
+import { GovukCookieBannerConfirmationComponent } from './components/govuk-cookie-banner/govuk-cookie-banner-confirmation.component';
 
 import { GovukErrorLineDirective } from './directives/govuk-error-line.directive';
 import { WarningButtonDirective } from './directives/warning-button.directive';
@@ -112,7 +112,7 @@ const components = [
   GovukInsetTextComponent,
   GovukNotificationBannerComponent,
   GovukCookieBannerComponent,
-  GovukCookieBannerAcceptedComponent,
+  GovukCookieBannerConfirmationComponent,
   GovukErrorSummaryComponent,
   GovukErrorLinkComponent,
   GovukInputAutocompleteComponent
