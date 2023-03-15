@@ -56,7 +56,7 @@ export class GovukInputAutocompleteComponent implements OnInit {
 
   onInputModelChange() {
     this.selectedIndex = 0;
-    this.modelChange.emit();
+    this.modelChange.emit(this.model);
   }
 
   onArrowDown() {
