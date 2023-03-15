@@ -9,7 +9,7 @@
         </div>
         <div class="govuk-button-group">
             <button value="hide" type="submit" name="cookies" class="govuk-button" data-module="govuk-button"
-                (click)="hideCookieMessage($event)">
+                (click)="this.onHideCookie.emit();">
                 Hide cookie message
             </button>
         </div>

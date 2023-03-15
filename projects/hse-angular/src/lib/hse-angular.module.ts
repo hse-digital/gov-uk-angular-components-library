@@ -63,6 +63,7 @@ import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { GovukErrorLinkComponent, GovukErrorSummaryComponent } from './components/govuk-error-summary/govuk-error-summary.component';
 import { GovukInputAutocompleteComponent } from './components/govuk-input-autocomplete/govuk-input-autocomplete.component';
+import { GovukCookieBannerMessageComponent } from './components/govuk-cookie-banner/govuk-cookie-banner-message.component';
 
 const components = [
   GovukButtonComponent,
@@ -147,6 +148,7 @@ const pipes = [
     ...icons,
     ...directives,
     ...pipes,
+    GovukCookieBannerMessageComponent,
   ],
   exports: [
     ...components,

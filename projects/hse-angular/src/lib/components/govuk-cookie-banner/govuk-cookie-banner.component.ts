@@ -2,23 +2,38 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'govuk-cookie-banner',
-  templateUrl: './govuk-cookie-banner.component.html',
-  styleUrls: ['./govuk-cookie-banner.component.scss']
+  templateUrl: './govuk-cookie-banner.component.html'
 })
 export class GovukCookieBannerComponent {
-  @Input() public id?: string;
-  @Input() public nameService?: string;
-  @Input() public viewCookiesLink?: string;
 
-  @Output() cookiesAccepted = new EventEmitter();
-  @Output() cookiesRejected = new EventEmitter();
+  @Input() viewCookiesLink!: string;
+  @Input() changeCookiesLink!: string;
+  @Input() title!: string;
 
-  acceptCookies() {
-    this.cookiesAccepted.emit();
+  @Input() showCookieBanner: boolean = true;
+  showCookieBannerAccepted: boolean = false;
+  showCookieBannerRejected: boolean = false;
+
+  @Output() onChangeCookies = new EventEmitter();
+  @Output() onCookiesAccepted = new EventEmitter();
+  @Output() onCookiesRejected = new EventEmitter();
+  @Output() onHideCookieBannerConfirmation = new EventEmitter();
+
+  cookiesAccepted() {
+    this.showCookieBannerRejected = false;
+    this.showCookieBannerAccepted = true;
+    this.onCookiesAccepted.emit();
   }
 
-  rejectCookies() {
-    this.cookiesRejected.emit();
+  cookiesRejected() {
+    this.showCookieBannerRejected = true;
+    this.showCookieBannerAccepted = false;
+    this.onCookiesRejected.emit();
   }
 
+  hideCookieBannerConfirmation() {
+    this.showCookieBannerRejected = false;
+    this.showCookieBannerAccepted = false;
+    this.onHideCookieBannerConfirmation.emit();
+  }
 }
