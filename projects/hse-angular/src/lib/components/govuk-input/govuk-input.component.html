@@ -4,7 +4,7 @@
              [isPageHeading]="isPageHeading" labelFor="input-{{id}}">
 
        <div class="govuk-input__wrapper">
-              <div class="govuk-input__prefix" *ngIf="prefix" aria-hidden="true">{{prefix}}</div>
+              <div class="govuk-input__prefix" *ngIf="prefix">{{prefix}}</div>
               <input id='input-{{id}}'
                      [attr.name]="name || id"
                      class="govuk-input {{class}}"
@@ -18,7 +18,7 @@
                      (submit)="onInputSubmit.emit($event)"
                      (scroll)="onInputScroll.emit($event)"
                      (keyup.enter)="onKeyupEnter.emit($event)">              
-              <div class="govuk-input__suffix" *ngIf="suffix" aria-hidden="true">{{suffix}}</div>
+              <div class="govuk-input__suffix" *ngIf="suffix">{{suffix}}</div>
        </div>
   
     <govuk-link-action id='linkAction-{{id}}'  [text]="linkActionText" [action]="linkActionAction"></govuk-link-action>
