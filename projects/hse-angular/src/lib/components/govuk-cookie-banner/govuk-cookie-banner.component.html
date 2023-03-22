@@ -5,7 +5,7 @@
 <govuk-cookie-banner-confirmation *ngIf="showCookieBannerAccepted" (onHideCookie)="hideCookieBannerConfirmation()">
     <govuk-body>
         You've accepted analytics cookies.
-        You can <a class="govuk-link" href="{{changeCookiesLink}}" (click)="onChangeCookies.emit()" role="link">change your
+        You can <a class="govuk-link" (click)="onChangeCookies.emit()" role="link">change your
             cookie settings</a> at any time.
     </govuk-body>
 </govuk-cookie-banner-confirmation>
@@ -13,7 +13,7 @@
 <govuk-cookie-banner-confirmation *ngIf="showCookieBannerRejected" (onHideCookie)="hideCookieBannerConfirmation()">
     <govuk-body>
         You've rejected analytics cookies.
-        You can <a class="govuk-link" href="{{changeCookiesLink}}" (click)="onChangeCookies.emit()" role="link">change your
+        You can <a class="govuk-link" (click)="onChangeCookies.emit()" role="link">change your
             cookie settings</a> at any time.
     </govuk-body>
 </govuk-cookie-banner-confirmation>
