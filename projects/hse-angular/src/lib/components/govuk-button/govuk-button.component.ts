@@ -21,4 +21,10 @@ export class GovukButtonComponent {
   getRouterLink() {
     return this.link ? [this.link] : null;
   }
+
+  triggerOnClick() {
+    if (!this.isLoading && !this.disabled) {
+      this.onClick.emit();
+    }
+  }
 }
