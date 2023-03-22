@@ -4,7 +4,7 @@
    type="button"
    [name]="name || id"
    [routerLink]="getRouterLink()"
-   [class.govuk-button--disabled]="disabled"
+   [class.govuk-button--disabled]="disabled || isLoading"
    (click)="onClick.emit($event)"
    (focus)="onFocus.emit($event)"
    (blur)="onBlur.emit($event)"
