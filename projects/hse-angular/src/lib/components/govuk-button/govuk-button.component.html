@@ -4,11 +4,11 @@
    type="button"
    [name]="name || id"
    [routerLink]="getRouterLink()"
-   [class.govuk-button--disabled]="disabled"
-   (click)="onClick.emit($event)"
+   [class.govuk-button--disabled]="disabled || isLoading"
+   (click)="triggerOnClick()"
+   (keyup.enter)="triggerOnClick()"
    (focus)="onFocus.emit($event)"
    (blur)="onBlur.emit($event)"
-   (keyup.enter)="onClick.emit($event)"
    tabindex="0" 
    role="button">
 
