@@ -28,6 +28,7 @@ export * from './lib/components/govuk-input/govuk-input.component';
 export * from './lib/components/govuk-link-action/govuk-link-action.component';
 export * from './lib/components/govuk-textarea/govuk-textarea.component';
 export * from './lib/components/govuk-task-list/govuk-task-list-item.component';
+export * from './lib/components/govuk-task-list/govuk-task-list-row.component';
 export * from './lib/components/govuk-radio/govuk-radio-group.component';
 export * from './lib/components/govuk-task-list/govuk-task-list.component';
 export * from './lib/components/govuk-navbar/govuk-nav.component';
