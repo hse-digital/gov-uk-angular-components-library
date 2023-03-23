@@ -6,5 +6,5 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./govuk-task-list-row.component.scss']
 })
 export class GovukTaskListRowComponent {
-  @Input() firstItem: boolean = false;
+  @Input() public firstItem: boolean = false;
 }

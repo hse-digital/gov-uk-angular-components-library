@@ -117,7 +117,8 @@ const components = [
   GovukCookieBannerConfirmationComponent,
   GovukErrorSummaryComponent,
   GovukErrorLinkComponent,
-  GovukInputAutocompleteComponent
+  GovukInputAutocompleteComponent,
+  GovukTaskListRowComponent,
 ]
 
 const directives = [
@@ -150,7 +151,6 @@ const pipes = [
     ...directives,
     ...pipes,
     GovukCookieBannerMessageComponent,
-    GovukTaskListRowComponent,
   ],
   exports: [
     ...components,
