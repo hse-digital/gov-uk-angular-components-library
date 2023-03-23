@@ -1,0 +1,6 @@
+<li class="app-task-list__item" [ngClass]="firstItem ? 'firstItem' : ''">
+    <span class="app-task-list__task-name">
+        <ng-content select="[task]"></ng-content>
+    </span>
+    <ng-content select="[tag]"></ng-content>
+</li>

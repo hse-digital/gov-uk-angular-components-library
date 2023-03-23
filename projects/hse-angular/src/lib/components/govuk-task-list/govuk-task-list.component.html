@@ -1,18 +1,12 @@
-<table>
-    <tr *ngFor="let item of taskListRows">
-        <td>
-            <h2 class="app-task-list__section">
-                <span class="app-task-list__section-number">{{item.sectionNumber}}.</span>
-            </h2>
-        </td>
-        <td>
-            <h2 class="app-task-list__section">
-                {{item.text}}
-            </h2>
-            <div class="hse-task-list-steps">
-                <ng-container *ngTemplateOutlet="item.template" />
-            </div>
-        </td>
-    </tr>
-</table>
+<ol class="app-task-list">
+    <li *ngFor="let item of taskListRows">
+        <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">{{item.sectionNumber}}.</span>
+            {{item.text}}
+        </h2>
+        <ul class="app-task-list__items">
+            <ng-container *ngTemplateOutlet="item.template" />
+        </ul>
+    </li>
+</ol>
 <ng-content></ng-content>

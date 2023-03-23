@@ -64,6 +64,7 @@ import { FormsModule } from '@angular/forms';
 import { GovukErrorLinkComponent, GovukErrorSummaryComponent } from './components/govuk-error-summary/govuk-error-summary.component';
 import { GovukInputAutocompleteComponent } from './components/govuk-input-autocomplete/govuk-input-autocomplete.component';
 import { GovukCookieBannerMessageComponent } from './components/govuk-cookie-banner/govuk-cookie-banner-message.component';
+import { GovukTaskListRowComponent } from './components/govuk-task-list/govuk-task-list-row.component';
 
 const components = [
   GovukButtonComponent,
@@ -149,6 +150,7 @@ const pipes = [
     ...directives,
     ...pipes,
     GovukCookieBannerMessageComponent,
+    GovukTaskListRowComponent,
   ],
   exports: [
     ...components,
