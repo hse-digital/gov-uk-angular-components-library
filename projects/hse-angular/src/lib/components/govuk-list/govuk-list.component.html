@@ -2,6 +2,7 @@
     <li *ngFor="let item of items">
         <a *ngIf="item.link" href="{{item.link}}" target="{{item.newTab ? '_blank' : ''}}" role="link">{{item.text}}</a>
         <span *ngIf="!item.link">{{item.text}}</span>
+        <ng-container *ngTemplateOutlet="item.template" />
     </li>
 </ul>
 <ng-content />
