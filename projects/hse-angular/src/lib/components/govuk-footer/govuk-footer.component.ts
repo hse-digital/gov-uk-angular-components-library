@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'govuk-footer',
@@ -6,4 +6,5 @@ import { Component } from '@angular/core';
 })
 export class GovukFooterComponent {
 
+  @Input() links!: { title: string, href: string }[];
 }

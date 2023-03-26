@@ -4,29 +4,8 @@
       <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
         <h2 class="govuk-visually-hidden">Footer links</h2>
         <ul class="govuk-footer__inline-list govuk-!-display-none-print" data-module="gem-track-click" data-track-links-only="" data-gem-track-click-module-started="true">
-          <li class="govuk-footer__inline-list-item">
-            <a class="govuk-footer__link" role="link" data-track-category="footerClicked" data-track-action="supportLink" data-track-label="/help" data-track-options="{&quot;dimension29&quot;:&quot;Help&quot;}" href="/help" target="_blank">Help</a>
-          </li>
-          <li class="govuk-footer__inline-list-item">
-            <a class="govuk-footer__link" role="link" data-track-category="footerClicked" data-track-action="supportLink" data-track-label="/help/privacy-notice" data-track-options="{&quot;dimension29&quot;:&quot;Privacy&quot;}" href="/help/privacy-notice" target="_blank">Privacy</a>
-          </li>
-          <li class="govuk-footer__inline-list-item">
-            <a class="govuk-footer__link" role="link" data-track-category="footerClicked" data-track-action="supportLink" data-track-label="/help/cookies" data-track-options="{&quot;dimension29&quot;:&quot;Cookies&quot;}" href="/help/cookies" target="_blank">Cookies</a>
-          </li>
-          <li class="govuk-footer__inline-list-item">
-            <a class="govuk-footer__link" role="link" data-track-category="footerClicked" data-track-action="supportLink" data-track-label="/help/accessibility-statement" data-track-options="{&quot;dimension29&quot;:&quot;Accessibility statement&quot;}" href="/help/accessibility-statement" target="_blank">Accessibility statement</a>
-          </li>
-          <li class="govuk-footer__inline-list-item">
-            <a class="govuk-footer__link" role="link" data-track-category="footerClicked" data-track-action="supportLink" data-track-label="/contact" data-track-options="{&quot;dimension29&quot;:&quot;Contact&quot;}" href="/contact" target="_blank">Contact</a>
-          </li>
-          <li class="govuk-footer__inline-list-item">
-            <a class="govuk-footer__link" role="link" data-track-category="footerClicked" data-track-action="supportLink" data-track-label="/help/terms-conditions" data-track-options="{&quot;dimension29&quot;:&quot;Terms and conditions&quot;}" href="/help/terms-conditions" target="_blank">Terms and conditions</a>
-          </li>
-          <li class="govuk-footer__inline-list-item">
-            <a class="govuk-footer__link" role="link" lang="cy" data-track-category="footerClicked" data-track-action="supportLink" data-track-label="/cymraeg" data-track-options="{&quot;dimension29&quot;:&quot;Rhestr o Wasanaethau Cymraeg&quot;}" href="https://gov.uk/cymraeg" target="_blank">Rhestr o Wasanaethau Cymraeg</a>
-          </li>
-          <li class="govuk-footer__inline-list-item">
-            <a class="govuk-footer__link" role="link" data-track-category="footerClicked" data-track-action="supportLink" data-track-label="/government/organisations/government-digital-service" data-track-options="{&quot;dimension29&quot;:&quot;Government Digital Service&quot;}" href="https://gov.uk/government/organisations/government-digital-service" target="_blank">Government Digital Service</a>
+          <li class="govuk-footer__inline-list-item" *ngFor="let link of links">
+            <a class="govuk-footer__link" role="link" data-track-category="footerClicked" data-track-action="supportLink" [href]="link.href" target="_blank">{{link.title}}</a>
           </li>
         </ul>
         <svg aria-hidden="true" focusable="false" class="govuk-footer__licence-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 483.2 195.7" height="17" width="41">
