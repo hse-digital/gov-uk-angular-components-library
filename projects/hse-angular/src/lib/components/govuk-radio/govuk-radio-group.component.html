@@ -1,5 +1,5 @@
 <div [govukErrorLine]="errorText" class="">
-    <h1 class="govuk-heading-l">{{title}}</h1>
+    <h2 class="govuk-heading-l">{{title}}</h2>
 
     <govuk-hint *ngIf="hintText" id="hint-{{id}}" [text]="hintText" [classes]="hintClass"></govuk-hint>
     <govuk-error id="error-{{id}}" [text]="errorText" [class]="errorClass"></govuk-error>
