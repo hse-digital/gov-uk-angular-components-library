@@ -1,3 +1,10 @@
-<div class="govuk-radios {{class}}">
-    <ng-content></ng-content>
+<div [govukErrorLine]="errorText" class="">
+    <h1 class="govuk-heading-l">{{title}}</h1>
+
+    <govuk-hint *ngIf="hintText" id="hint-{{id}}" [text]="hintText" [classes]="hintClass"></govuk-hint>
+    <govuk-error id="error-{{id}}" [text]="errorText" [class]="errorClass"></govuk-error>
+
+    <div class="govuk-radios {{class}}">
+        <ng-content></ng-content>
+    </div>
 </div>
