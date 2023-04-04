@@ -1,6 +1,6 @@
 <div *ngIf="showError" class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1"
     data-module="govuk-error-summary">
-    <h2 class="govuk-error-summary__title" id="error-summary-title" style="color: #d4351c;"> 
+    <h2 class="govuk-error-summary__title" id="error-summary-title" style="color: #d4351c;" *ngIf="message"> 
         {{message}} 
     </h2>
     <div class="govuk-error-summary__body">
