@@ -1,10 +1,11 @@
-<div [govukErrorLine]="errorText" class="">
-    <h2 class="govuk-heading-l" *ngIf="title">{{title}}</h2>
+<fieldset class="govuk-fieldset {{class}}" [govukErrorLine]="errorText">
+    <legend class="govuk-fieldset__legend--l" *ngIf="title">
+        <h1 class="govuk-heading-l" *ngIf="isPageHeading">{{title}}</h1>
+        <h2 class="govuk-heading-l" *ngIf="!isPageHeading">{{title}}</h2>
+    </legend>
 
     <govuk-hint *ngIf="hintText" id="hint-{{id}}" [text]="hintText" [classes]="hintClass"></govuk-hint>
     <govuk-error id="error-{{id}}" [text]="errorText" [class]="errorClass"></govuk-error>
 
-    <div class="govuk-radios {{class}}">
-        <ng-content></ng-content>
-    </div>
-</div>
+    <ng-content></ng-content>
+</fieldset>
