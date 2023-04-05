@@ -5,8 +5,8 @@
       <h2 class="govuk-fieldset__heading" *ngIf="!isPageHeading">{{title}}</h2>
     </legend>
 
-    <govuk-hint *ngIf="hintText" id="hint-{{id}}" [text]="hintText" [classes]="hintClass"></govuk-hint>
-    <govuk-error id="error-{{id}}" [text]="errorText" [class]="errorClass"></govuk-error>
+    <govuk-hint *ngIf="hint" id="hint-{{id}}" [text]="hint" [classes]="hintClass"></govuk-hint>
+    <govuk-error id="error-{{id}}" [text]="errorText" [class]="errorClasses"></govuk-error>
 
     <div class="govuk-checkboxes {{class}}">
       <ng-content></ng-content>
