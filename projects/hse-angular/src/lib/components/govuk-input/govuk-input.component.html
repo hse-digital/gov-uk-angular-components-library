@@ -12,6 +12,7 @@
                      [attr.maxlength]="maxlength"
                      [attr.type]="type"
                      [(ngModel)]="model"
+                     [step]="step"
                      (ngModelChange)="modelChange.emit($event)" 
                      (focus)="onInputFocus.emit($event)"
                      (blur)="onInputBlur.emit($event)"
