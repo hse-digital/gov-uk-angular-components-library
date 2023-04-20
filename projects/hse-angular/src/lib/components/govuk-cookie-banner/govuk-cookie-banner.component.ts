@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, AfterViewInit } from '@angular/core';
 
 @Component({
   selector: 'govuk-cookie-banner',
@@ -10,30 +10,13 @@ export class GovukCookieBannerComponent {
   @Input() changeCookiesLink!: string;
   @Input() title!: string;
 
+  @Input() cookiesAccepted: boolean = false;
   @Input() showCookieBanner: boolean = true;
-  showCookieBannerAccepted: boolean = false;
-  showCookieBannerRejected: boolean = false;
+  @Input() showConfirmBanner: boolean = false;
 
   @Output() onChangeCookies = new EventEmitter();
   @Output() onCookiesAccepted = new EventEmitter();
   @Output() onCookiesRejected = new EventEmitter();
   @Output() onHideCookieBannerConfirmation = new EventEmitter();
 
-  cookiesAccepted() {
-    this.showCookieBannerRejected = false;
-    this.showCookieBannerAccepted = true;
-    this.onCookiesAccepted.emit();
-  }
-
-  cookiesRejected() {
-    this.showCookieBannerRejected = true;
-    this.showCookieBannerAccepted = false;
-    this.onCookiesRejected.emit();
-  }
-
-  hideCookieBannerConfirmation() {
-    this.showCookieBannerRejected = false;
-    this.showCookieBannerAccepted = false;
-    this.onHideCookieBannerConfirmation.emit();
-  }
 }
