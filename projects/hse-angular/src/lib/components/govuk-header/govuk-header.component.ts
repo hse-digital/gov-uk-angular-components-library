@@ -8,4 +8,5 @@ import { Component, Input } from '@angular/core';
 export class GovukHeaderComponent {
   @Input() title?: string;
   @Input() titleLink?: string;
+  @Input() govukLogoLink?: string = "#";
 }

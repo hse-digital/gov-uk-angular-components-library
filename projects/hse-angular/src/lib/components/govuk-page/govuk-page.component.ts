@@ -8,4 +8,5 @@ export class GovukPageComponent {
   @Input() headerTitle?: string;
   @Input() headerTitleLink?: string;
   @Input() footerLinks!: { title: string, href: string }[];
+  @Input() govukLogoLink?: string = "#";
 }
