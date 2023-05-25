@@ -4,12 +4,11 @@
     <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
             <div class="govuk-form-group">
-
-                <ng-content/>
-
-                <govuk-button (onClick)="saveAndContinue.emit()" [isLoading]="processing">{{saveAndContinueText}}</govuk-button>
-                <save-and-come-back (onClick)="saveAndComeBack.emit()" />
+                <ng-content />
             </div>
+
+            <govuk-button (onClick)="saveAndContinue.emit()" [isLoading]="processing">{{saveAndContinueText}}</govuk-button>
+            <save-and-come-back (onClick)="saveAndComeBack.emit()" />
         </div>
     </div>
 </div>
