@@ -50,6 +50,8 @@ export * from './lib/components/govuk-cookie-banner/govuk-cookie-banner.componen
 export * from './lib/components/govuk-cookie-banner/govuk-cookie-banner-confirmation.component';
 export * from './lib/components/govuk-error-summary/govuk-error-summary.component';
 export * from './lib/components/govuk-input-autocomplete/govuk-input-autocomplete.component';
+export * from './lib/components/govuk-formpage/govuk-formpage.component';
+export * from './lib/components/govuk-saveandcomeback/govuk-saveandcomeback.component';
 
 export * from './lib/directives/govuk-error-line.directive';
 export * from './lib/directives/important-button.directive';
