@@ -65,6 +65,8 @@ import { GovukErrorLinkComponent, GovukErrorSummaryComponent } from './component
 import { GovukInputAutocompleteComponent } from './components/govuk-input-autocomplete/govuk-input-autocomplete.component';
 import { GovukCookieBannerMessageComponent } from './components/govuk-cookie-banner/govuk-cookie-banner-message.component';
 import { GovukTaskListRowComponent } from './components/govuk-task-list/govuk-task-list-row.component';
+import { GovukFormPageComponent } from './components/govuk-formpage/govuk-formpage.component';
+import { GovukSaveAndComeBackComponent } from './components/govuk-saveandcomeback/govuk-saveandcomeback.component';
 
 const components = [
   GovukButtonComponent,
@@ -119,6 +121,8 @@ const components = [
   GovukErrorLinkComponent,
   GovukInputAutocompleteComponent,
   GovukTaskListRowComponent,
+  GovukFormPageComponent,
+  GovukSaveAndComeBackComponent
 ]
 
 const directives = [
