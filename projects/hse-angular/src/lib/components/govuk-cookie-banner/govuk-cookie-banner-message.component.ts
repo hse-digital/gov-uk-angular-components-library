@@ -11,6 +11,10 @@ export class GovukCookieBannerMessageComponent {
   @Input() public nameService?: string;
   @Input() public viewCookiesLink?: string;
 
+  @Input() public acceptCookiesText?: string;
+  @Input() public rejectCookiesText?: string;
+  @Input() public viewCookiesText?: string;
+
   @Output() cookiesAccepted = new EventEmitter();
   @Output() cookiesRejected = new EventEmitter();
 }

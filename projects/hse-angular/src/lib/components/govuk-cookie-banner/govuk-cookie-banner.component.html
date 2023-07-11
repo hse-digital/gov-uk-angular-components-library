@@ -1,6 +1,10 @@
 <govuk-cookie-banner-message *ngIf="showCookieBanner" [nameService]="title"
     (cookiesAccepted)="onCookiesAccepted.emit()" (cookiesRejected)="onCookiesRejected.emit()"
-    [viewCookiesLink]="viewCookiesLink" />
+    [viewCookiesLink]="viewCookiesLink" [acceptCookiesText]="acceptCookiesText" [rejectCookiesText]="rejectCookiesText" [viewCookiesText]="viewCookiesText">
+
+    <ng-content/>
+    
+</govuk-cookie-banner-message>
 
 <govuk-cookie-banner-confirmation *ngIf="this.cookiesAccepted && this.showConfirmBanner" (onHideCookie)="onHideCookieBannerConfirmation.emit()">
     <govuk-body>

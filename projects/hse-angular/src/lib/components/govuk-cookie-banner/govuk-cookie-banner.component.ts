@@ -14,6 +14,10 @@ export class GovukCookieBannerComponent {
   @Input() showCookieBanner: boolean = true;
   @Input() showConfirmBanner: boolean = false;
 
+  @Input() acceptCookiesText: string = "Accept additional";
+  @Input() rejectCookiesText: string = "Reject additional cookies";
+  @Input() viewCookiesText: string = "View cookies";
+
   @Output() onChangeCookies = new EventEmitter();
   @Output() onCookiesAccepted = new EventEmitter();
   @Output() onCookiesRejected = new EventEmitter();
