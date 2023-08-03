@@ -11,6 +11,12 @@
                 {{item.actionText}}<span class="govuk-visually-hidden">{{item.actionDetails}}</span>
             </a>
         </dd>
+        <dd class="govuk-summary-list__actions" *ngIf="item.showAction2">
+            <span><strong>{{item.actionSeparator}}</strong></span>
+            <a class="govuk-link" role="link" (click)="item.onClick2.emit()" (keyup.enter)="item.onKeyupEnter2.emit()" tabindex="1">
+                {{item.actionText2}}<span class="govuk-visually-hidden">{{item.actionDetails2}}</span>
+            </a>
+        </dd>
     </div>
 </dl>
 <ng-content />
