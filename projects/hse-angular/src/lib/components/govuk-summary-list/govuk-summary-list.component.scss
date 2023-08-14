@@ -1,5 +1,5 @@
 .govuk-summary-list {
-    
+
     &:not(.govuk-summary-list--no-border):first-child {
         border-top: 1px solid #b1b4b6;
     }
@@ -9,16 +9,19 @@
     }
 
     .govuk-summary-list__key {
-        width: 30%;
+        width: 50%;
     }
-    
+
     .govuk-summary-list__value {
         width: auto;
     }
-    
+
     .govuk-summary-list__actions {
-        width: 20%;
+        width: 30%;
     }
 
+    .govuk-summary-list__actions-list-item:not(:first-child){
+      border-left: 1px solid #b1b4b6
+    }
 }
 

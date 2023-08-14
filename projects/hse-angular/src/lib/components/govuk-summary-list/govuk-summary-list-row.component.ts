@@ -9,7 +9,6 @@ export class GovukSummaryListRowComponent {
   @Input() public actionText?: string = 'Change';
   @Input() public actionDetails?: string;
   @Input() public showAction = false;
-  @Input() public actionSeparator : string = " | ";
   @Input() public actionText2?: string = 'Remove';
   @Input() public actionDetails2?: string;
   @Input() public showAction2 = false;
