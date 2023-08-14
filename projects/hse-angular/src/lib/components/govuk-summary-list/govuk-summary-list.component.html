@@ -1,22 +1,76 @@
-<dl class="govuk-summary-list {{classes}}">
-    <div class="govuk-summary-list__row" *ngFor="let item of summaryRows">
-        <dt class="govuk-summary-list__key" *ngIf="item.key">
-            {{item.key}}
-        </dt>
-        <dd class="govuk-summary-list__value">
-            <ng-container *ngTemplateOutlet="item.template" />
-        </dd>
-        <dd class="govuk-summary-list__actions" *ngIf="item.showAction">
-            <a class="govuk-link" role="link" (click)="item.onClick.emit()" (keyup.enter)="item.onKeyupEnter.emit()" tabindex="0">
-                {{item.actionText}}<span class="govuk-visually-hidden">{{item.actionDetails}}</span>
-            </a>
-        </dd>
-        <dd class="govuk-summary-list__actions" *ngIf="item.showAction2">
-            <span><strong>{{item.actionSeparator}}</strong></span>
-            <a class="govuk-link" role="link" (click)="item.onClick2.emit()" (keyup.enter)="item.onKeyupEnter2.emit()" tabindex="1">
-                {{item.actionText2}}<span class="govuk-visually-hidden">{{item.actionDetails2}}</span>
-            </a>
-        </dd>
-    </div>
+<dl class="govuk-summary-list {{ classes }}">
+  <div class="govuk-summary-list__row" *ngFor="let item of summaryRows">
+    <dt class="govuk-summary-list__key" *ngIf="item.key">
+      {{ item.key }}
+    </dt>
+    <dd class="govuk-summary-list__value">
+      <ng-container *ngTemplateOutlet="item.template" />
+    </dd>
+
+    <dd *ngIf="item.showAction == true && item.showAction2 == true" class="govuk-summary-list__actions" >
+      <ul class="govuk-summary-list__actions-list">
+        <li class="govuk-summary-list__actions-list-item">
+          <a
+            class="govuk-link"
+            role="link"
+            (click)="item.onClick.emit()"
+            (keyup.enter)="item.onKeyupEnter.emit()"
+            tabindex="0"
+          >
+            {{ item.actionText}}
+            <span class="govuk-visually-hidden">{{item.actionDetails}}</span>
+          </a>
+        </li>
+
+        <li class="govuk-summary-list__actions-list-item">
+          <a
+            class="govuk-link"
+            role="link"
+            (click)="item.onClick2.emit()"
+            (keyup.enter)="item.onKeyupEnter2.emit()"
+            tabindex="1"
+          >
+            {{ item.actionText2}}
+            <span class="govuk-visually-hidden">{{item.actionDetails2}}</span>
+          </a>
+        </li>
+      </ul>
+    </dd>
+
+    <dd *ngIf="item.showAction == true && item.showAction2 == false" class="govuk-summary-list__actions" >
+      <ul class="govuk-summary-list__actions-list">
+        <li class="govuk-summary-list__actions-list-item">
+          <a
+          class="govuk-link"
+          role="link"
+          (click)="item.onClick.emit()"
+          (keyup.enter)="item.onKeyupEnter.emit()"
+          tabindex="0"
+        >
+        {{ item.actionText
+        }}<span class="govuk-visually-hidden">{{ item.actionDetails }}</span>
+        </a>
+        </li>
+        </ul>
+    </dd>
+
+    <dd *ngIf="item.showAction2 == true && item.showAction == false" class="govuk-summary-list__actions" >
+      <ul class="govuk-summary-list__actions-list">
+        <li class="govuk-summary-list__actions-list-item">
+          <a
+          class="govuk-link"
+          role="link"
+          (click)="item.onClick2.emit()"
+          (keyup.enter)="item.onKeyupEnter2.emit()"
+          tabindex="1"
+        >
+          {{ item.actionText2
+          }}<span class="govuk-visually-hidden">{{ item.actionDetails2 }}</span>
+        </a>
+        </li>
+        </ul>
+    </dd>
+  </div>
 </dl>
+
 <ng-content />
