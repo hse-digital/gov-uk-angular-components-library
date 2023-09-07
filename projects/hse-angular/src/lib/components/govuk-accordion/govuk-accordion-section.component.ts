@@ -12,7 +12,7 @@ export class GovukAccordionSectionComponent {
 
   expandClassName?: string = 'govuk-accordion__section--expanded';
 
-  expand() { this.active = !this.active; }
+  toggle() { this.active = !this.active; }
   open() { this.active = true; }
   close() { this.active = false; }
 }
