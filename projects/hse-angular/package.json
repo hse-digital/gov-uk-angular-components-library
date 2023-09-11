@@ -1,9 +1,9 @@
 {
   "name": "hse-angular",
-  "version": "0.0.98",
+  "version": "0.0.101",
   "peerDependencies": {
-    "@angular/common": "^16.1.0",
-    "@angular/core": "^16.1.0"
+    "@angular/common": "^15.1.5",
+    "@angular/core": "^15.1.5"
   },
   "dependencies": {
     "tslib": "^2.3.0"
