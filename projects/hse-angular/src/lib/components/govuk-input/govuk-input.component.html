@@ -1,11 +1,12 @@
 <govuk-field id='field-{{id}}' [hint]="hint" [hintClass]="hintClass"
              [errorText]="errorText" [errorClass]="errorClass"
-             [label]="label" [labelClass]="labelClass" 
+             [label]="label" [labelClass]="labelClass"
              [isPageHeading]="isPageHeading" labelFor="input-{{id}}">
 
        <div class="govuk-input__wrapper">
               <div class="govuk-input__prefix" *ngIf="prefix">{{prefix}}</div>
               <input id='input-{{id}}'
+                     attr.aria-describedby='field-{{id}}'
                      [attr.name]="name || id"
                      class="govuk-input {{class}}"
                      [ngClass]="{'govuk-input--error' : errorText}"
@@ -13,15 +14,15 @@
                      [attr.type]="type"
                      [(ngModel)]="model"
                      [step]="step"
-                     (ngModelChange)="modelChange.emit($event)" 
+                     (ngModelChange)="modelChange.emit($event)"
                      (focus)="onInputFocus.emit($event)"
                      (blur)="onInputBlur.emit($event)"
                      (submit)="onInputSubmit.emit($event)"
                      (scroll)="onInputScroll.emit($event)"
-                     (keyup.enter)="onKeyupEnter.emit($event)">              
+                     (keyup.enter)="onKeyupEnter.emit($event)">
               <div class="govuk-input__suffix" *ngIf="suffix">{{suffix}}</div>
        </div>
-  
+
     <govuk-link-action id='linkAction-{{id}}'  [text]="linkActionText" [action]="linkActionAction"></govuk-link-action>
-  
+
 </govuk-field>
