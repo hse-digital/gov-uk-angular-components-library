@@ -6,16 +6,17 @@ import { AfterViewInit, Component, ElementRef, Input, ViewChild } from '@angular
   templateUrl: './govuk-error-summary.component.html'
 })
 export class GovukErrorSummaryComponent implements AfterViewInit {
-  @ViewChild("errorSummnaryDiv") errorSummary?: ElementRef;
   @Input() title!: String;
   @Input() autofocus: boolean = true;
+
+  constructor(private ref: ElementRef) {}
 
   ngAfterViewInit(): void {
     if(this.autofocus) this.focus();
   }  
   
   public focus() {    
-    this.errorSummary?.nativeElement.focus(); 
+    this.ref.nativeElement.querySelectorAll('a')?.[0]?.focus();
   }
 }
 
