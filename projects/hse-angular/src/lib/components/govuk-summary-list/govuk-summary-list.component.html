@@ -38,8 +38,6 @@
     </dd>
 
     <dd *ngIf="item.showAction == true && item.showAction2 == false" class="govuk-summary-list__actions" >
-      <ul class="govuk-summary-list__actions-list">
-        <li class="govuk-summary-list__actions-list-item">
           <a
           class="govuk-link"
           role="link"
@@ -50,13 +48,10 @@
         {{ item.actionText
         }}<span class="govuk-visually-hidden">{{ item.actionDetails }}</span>
         </a>
-        </li>
-        </ul>
+
     </dd>
 
     <dd *ngIf="item.showAction2 == true && item.showAction == false" class="govuk-summary-list__actions" >
-      <ul class="govuk-summary-list__actions-list">
-        <li class="govuk-summary-list__actions-list-item">
           <a
           class="govuk-link"
           role="link"
@@ -67,8 +62,6 @@
           {{ item.actionText2
           }}<span class="govuk-visually-hidden">{{ item.actionDetails2 }}</span>
         </a>
-        </li>
-        </ul>
     </dd>
   </div>
 </dl>
