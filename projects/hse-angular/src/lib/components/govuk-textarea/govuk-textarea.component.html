@@ -4,6 +4,7 @@
 
   <textarea id="textarea-{{id}}" 
             [attr.name]="name || id" 
+            attr.aria-describedby="character-count-{{id}}"
             [attr.rows]="rows" 
             class="govuk-textarea {{class}}"
             [ngClass]="{'govuk-textarea--error' : errorText, 'govuk-character-count': enableCharacterCount}" 
@@ -13,6 +14,6 @@
             (ngModelChange)="textareaNgModelChange($event)">
   </textarea>
 
-  <govuk-character-count [enableCharacterCount]="enableCharacterCount" [numCharactersRemaining]="numCharsRemaining"></govuk-character-count>
+  <govuk-character-count id="character-count-{{id}}" [enableCharacterCount]="enableCharacterCount" [numCharactersRemaining]="numCharsRemaining"></govuk-character-count>
 
-<govuk-field>
+</govuk-field>
