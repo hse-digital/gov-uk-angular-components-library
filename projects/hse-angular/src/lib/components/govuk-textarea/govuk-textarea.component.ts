@@ -14,6 +14,8 @@ export class GovukTextareaComponent {
   @Input() public rows?: string = '5';
   @Input() public maxlength?: number;
 
+  @Input() public disabled: boolean = false;
+
   @Input() public enableCharacterCount?: boolean = false;
   @Input() public maxCharacterRemaining: number = 0;
   public numCharsRemaining: number = 0;
