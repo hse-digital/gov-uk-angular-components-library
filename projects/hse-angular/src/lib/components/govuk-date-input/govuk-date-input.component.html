@@ -1,4 +1,4 @@
-<govuk-fieldset [id]="id" [title]="title" [isPageHeading]="isPageHeading" 
+<govuk-fieldset [id]="id" [title]="title" [isPageHeading]="isPageHeading"
                 [titleClass]="titleClass" [class]="fieldsetMarginBottom"
                 [hintText]="hint" [hintClass]="hintClass"
                 [errorText]="errorText" [errorClass]="errorClass">
@@ -17,6 +17,7 @@
                    maxlength="2"
                    id="{{id}}-day"
                    name="{{id}}-day"
+                   attr.aria-describedby='hint-hint-{{id}}'
                    type="text" inputmode="numeric">
           </div>
         </div>
@@ -32,6 +33,7 @@
                    maxlength="2"
                    id="{{id}}-month"
                    name="{{id}}-month"
+                   attr.aria-describedby='hint-hint-{{id}}'
                    type="text"
                    inputmode="numeric">
           </div>
@@ -48,6 +50,7 @@
                    maxlength="4"
                    id="{{id}}-year"
                    name="{{id}}-year"
+                   attr.aria-describedby='hint-hint-{{id}}'
                    type="text"
                    inputmode="numeric">
           </div>
