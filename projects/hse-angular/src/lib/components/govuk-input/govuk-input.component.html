@@ -6,7 +6,7 @@
        <div class="govuk-input__wrapper">
               <div class="govuk-input__prefix" *ngIf="prefix">{{prefix}}</div>
               <input id='input-{{id}}'
-                     attr.aria-describedby='field-{{id}}'
+                     attr.aria-describedby='hint-hint-field-{{id}} lbl-label-field-{{id}}'
                      [attr.name]="name || id"
                      class="govuk-input {{class}}"
                      [ngClass]="{'govuk-input--error' : errorText}"
