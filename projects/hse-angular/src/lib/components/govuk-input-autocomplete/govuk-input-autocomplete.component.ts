@@ -23,6 +23,7 @@ export class GovukInputAutocompleteComponent implements OnInit {
   @Input() public labelClass?: string;
   @Input() public isPageHeading?: boolean = false;
   @Input() public labelFor?: string;
+  @Input() public labelledBy?: string;
 
   @Input() public hint?: string;
   @Input() public hintClass?: string;
