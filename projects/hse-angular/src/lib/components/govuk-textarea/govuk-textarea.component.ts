@@ -49,4 +49,16 @@ export class GovukTextareaComponent {
     if(this.enableCharacterCount) 
       this.numCharsRemaining = this.maxCharacterRemaining - input.length;
   }
+
+  setDescribedByAttribute() {
+    if (this.hint && this.enableCharacterCount) {
+      return `hint-hint-field-${this.id} character-count-${this.id}`
+    } else if(this.hint) {
+      return `hint-hint-field-${this.id}`;
+    } else if (this.enableCharacterCount) {
+      return `character-count-${this.id}`
+    } else {
+      return "";
+    }
+  }
 }

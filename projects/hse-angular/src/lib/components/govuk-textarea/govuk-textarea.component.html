@@ -4,7 +4,7 @@
 
   <textarea id="textarea-{{id}}" 
             [attr.name]="name || id" 
-            attr.aria-describedby="character-count-{{id}}"
+            [attr.aria-describedby]="setDescribedByAttribute()"
             [attr.rows]="rows" 
             class="govuk-textarea {{class}}"
             [ngClass]="{'govuk-textarea--error' : errorText, 'govuk-character-count': enableCharacterCount}" 
