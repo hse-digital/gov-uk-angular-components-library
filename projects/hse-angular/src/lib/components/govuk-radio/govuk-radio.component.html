@@ -1,11 +1,13 @@
 <div id="group-{{id}}" class="govuk-radios__item" tabindex="-1" style="margin-bottom: 10px;">
 
-    <input id="{{id}}-input" #radio name="{{name}}" 
-            (change)="clicked()" 
-            [(ngModel)]="model" 
+    <input id="{{id}}-input" #radio name="{{name}}"
+            (change)="clicked()"
+            [(ngModel)]="model"
             [value]="value"
             (keyup.enter)="onKeyupEnter.emit($event)"
-            type="radio" class="govuk-radios__input" tabindex="0">
+            type="radio" class="govuk-radios__input" tabindex="0"
+            attr.aria-describedby="hint-radio-item-{{id}}"
+            >
     <label id="{{id}}-label" class="govuk-label govuk-radios__label" for="{{id}}-input">{{label}}</label>
 
     <govuk-hint id="radio-item-{{id}}" [text]="hint" classes="govuk-radios__hint"></govuk-hint>

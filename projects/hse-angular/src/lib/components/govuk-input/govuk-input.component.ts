@@ -14,7 +14,7 @@ export class GovukInputComponent {
   @Input() public maxlength?: number = 50;
   @Input() public suffix?: string;
   @Input() public prefix?: string;
-  
+
   @Output() modelChange = new EventEmitter();
   @Output() onInputBlur = new EventEmitter();
   @Output() onInputFocus = new EventEmitter();
@@ -26,6 +26,7 @@ export class GovukInputComponent {
   @Input() public labelClass?: string;
   @Input() public isPageHeading?: boolean = false;
   @Input() public labelFor?: string;
+  @Input() public labelledBy?: string;
 
   @Input() public hint?: string;
   @Input() public hintClass?: string;
