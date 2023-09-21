@@ -1,9 +1,9 @@
 <govuk-field id='field-{{id}}' [hint]="hint" [hintClass]="hintClass" [errorText]="errorText" [errorClass]="errorClass"
   [label]="label" [labelClass]="labelClass" [isPageHeading]="isPageHeading" labelFor="input-{{id}}">
 
-  <input id='input-{{id}}' [attr.name]="name || id" class="govuk-input {{class}}"
+  <input id='input-{{id}}' [attr.name]="name || id" attr.aria-describedby='hint-hint-field-{{id}} lbl-label-field-{{id}}' class="govuk-input {{class}}"
     [ngClass]="{'govuk-input--error' : errorText}" 
-    [attr.maxlength]="maxlength" 
+    [attr.maxlength]="maxlength"  
     [attr.type]="type" 
     [(ngModel)]="model"
     (ngModelChange)="onInputModelChange()" 
