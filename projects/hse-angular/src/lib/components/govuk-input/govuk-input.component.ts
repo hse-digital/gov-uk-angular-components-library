@@ -51,7 +51,7 @@ export class GovukInputComponent {
     } else if (this.prefix) {
       return `prefix-${this.id}`
     } else {
-      return "";
+      return null;
     }
   }
 

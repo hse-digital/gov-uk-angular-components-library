@@ -58,7 +58,7 @@ export class GovukTextareaComponent {
     } else if (this.enableCharacterCount) {
       return `character-count-${this.id}`
     } else {
-      return "";
+      return null;
     }
   }
 }
