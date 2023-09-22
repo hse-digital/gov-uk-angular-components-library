@@ -39,4 +39,20 @@ export class GovukInputComponent {
 
   @Input() public model: any;
 
+  setDescribedByAttribute() {
+    if (this.hint && this.suffix) {
+      return `hint-hint-field-${this.id} lbl-label-field-${this.id} sufix-${this.id}`
+    } else if (this.hint && this.prefix) {
+      return `hint-hint-field-${this.id} lbl-label-field-${this.id}  prefix-${this.id}`
+    } else if (this.hint) {
+      return `hint-hint-field-${this.id} lbl-label-field-${this.id}`
+    } else if (this.suffix) {
+      return `sufix-${this.id}`
+    } else if (this.prefix) {
+      return `prefix-${this.id}`
+    } else {
+      return null;
+    }
+  }
+
 }
