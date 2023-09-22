@@ -42,7 +42,7 @@ export class GovukInputComponent {
   setDescribedByAttribute() {
     if (this.hint && this.suffix) {
       return `hint-hint-field-${this.id} lbl-label-field-${this.id} sufix-${this.id}`
-    } else if(this.hint && this.prefix) {
+    } else if (this.hint && this.prefix) {
       return `hint-hint-field-${this.id} lbl-label-field-${this.id}  prefix-${this.id}`
     } else if (this.hint) {
       return `hint-hint-field-${this.id} lbl-label-field-${this.id}`
