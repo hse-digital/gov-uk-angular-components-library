@@ -12,6 +12,7 @@ import { GovukFieldsetComponent } from './components/govuk-fieldset/govuk-fields
 import { GovukRadioComponent } from './components/govuk-radio/govuk-radio.component';
 import { GovukAccordionComponent } from './components/govuk-accordion/govuk-accordion.component';
 import { GovukDateInputComponent } from './components/govuk-date-input/govuk-date-input.component';
+import { GovukTimeInputComponent } from './components/govuk-time-input/govuk-time-input.component';
 import { GovukErrorMessageComponent } from './components/govuk-error-message/govuk-error-message.component';
 import { GovukLoadingComponent } from './components/govuk-loading/govuk-loading.component';
 import { GovukPhaseBannerComponent } from './components/govuk-phase-banner/govuk-phase-banner.component';
@@ -99,6 +100,7 @@ const components = [
   GovukAccordionComponent,
   GovukCheckboxGroupComponent,
   GovukDateInputComponent,
+  GovukTimeInputComponent,
   GovukErrorMessageComponent,
   GovukLoadingComponent,
   GovukPhaseBannerComponent,

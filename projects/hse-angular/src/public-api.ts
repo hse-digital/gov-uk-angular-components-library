@@ -11,6 +11,7 @@ export * from './lib/components/govuk-fieldset/govuk-fieldset.component';
 export * from './lib/components/govuk-radio/govuk-radio.component';
 export * from './lib/components/govuk-accordion/govuk-accordion.component';
 export * from './lib/components/govuk-date-input/govuk-date-input.component';
+export * from './lib/components/govuk-time-input/govuk-time-input.component';
 export * from './lib/components/govuk-error-message/govuk-error-message.component';
 export * from './lib/components/govuk-loading/govuk-loading.component';
 export * from './lib/components/govuk-phase-banner/govuk-phase-banner.component';
