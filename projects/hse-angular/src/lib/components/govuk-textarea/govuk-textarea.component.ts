@@ -52,9 +52,9 @@ export class GovukTextareaComponent {
 
   setDescribedByAttribute() {
     if (this.hint && this.enableCharacterCount) {
-      return `hint-hint-field-${this.id} character-count-${this.id}`
+      return `hint-hint-textarea-field-${this.id} character-count-${this.id}`
     } else if (this.hint) {
-      return `hint-hint-field-${this.id}`;
+      return `hint-hint-textarea-field-${this.id}`;
     } else if (this.enableCharacterCount) {
       return `character-count-${this.id}`
     } else {
