@@ -1,0 +1,44 @@
+<govuk-fieldset [id]="id" [title]="title" [isPageHeading]="isPageHeading"
+                [titleClass]="titleClass" [class]="fieldsetMarginBottom"
+                [hintText]="hint" [hintClass]="hintClass"
+                [errorText]="errorText" [errorClass]="errorClass">
+
+      <div class="govuk-date-input" id="{{id}}-date-input">
+        <div class="govuk-date-input__item">
+
+          <div class="govuk-form-group">
+
+            <label class="govuk-label govuk-date-input__label" for="{{id}}-hour">
+              Hour
+            </label>
+
+            <input class="govuk-input govuk-date-input__input govuk-input--width-2"
+                   [(ngModel)]="model.hour" (ngModelChange)="this.modelChange.emit(model)"
+                   maxlength="2"
+                   id="{{id}}-hour"
+                   name="{{id}}-hour"
+                   attr.aria-describedby='hint-hint-{{id}}'
+                   type="text" inputmode="numeric">
+          </div>
+        </div>
+
+        <div class="govuk-date-input__item">
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-date-input__label" for="{{id}}-minute">
+              Minute
+            </label>
+
+            <input class="govuk-input govuk-date-input__input govuk-input--width-2"
+                   [(ngModel)]="model.minute" (ngModelChange)="this.modelChange.emit(model)"
+                   maxlength="2"
+                   id="{{id}}-minute"
+                   name="{{id}}-minute"
+                   attr.aria-describedby='hint-hint-{{id}}'
+                   type="text"
+                   inputmode="numeric">
+          </div>
+        </div>
+
+      </div>
+      <govuk-link-action [id]="id" [text]="linkActionText" [action]="linkActionAction"></govuk-link-action>
+    </govuk-fieldset>
