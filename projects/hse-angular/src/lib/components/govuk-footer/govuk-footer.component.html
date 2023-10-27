@@ -5,7 +5,7 @@
         <h2 class="govuk-visually-hidden">Footer links</h2>
         <ul class="govuk-footer__inline-list govuk-!-display-none-print" data-module="gem-track-click" data-track-links-only="" data-gem-track-click-module-started="true">
           <li class="govuk-footer__inline-list-item" *ngFor="let link of links">
-            <a class="govuk-footer__link" role="link" data-track-category="footerClicked" data-track-action="supportLink" [href]="link.href" [attr.target]="getTargetAttribute(link.newTab ?? true)">{{link.title}}</a>
+            <a class="govuk-footer__link" role="link" data-track-category="footerClicked" data-track-action="supportLink" [href]="link.href" [attr.target]="getTargetAttribute(link.isNewTab ?? true)">{{link.title}}</a>
           </li>
         </ul>
         <svg aria-hidden="true" focusable="false" class="govuk-footer__licence-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 483.2 195.7" height="17" width="41">
