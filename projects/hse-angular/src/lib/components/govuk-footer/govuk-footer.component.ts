@@ -6,5 +6,9 @@ import { Component, Input } from '@angular/core';
 })
 export class GovukFooterComponent {
 
-  @Input() links!: { title: string, href: string }[];
+  @Input() links!: { title: string, href: string, isNewTab?: boolean }[];
+
+  getTargetAttribute(isNewTab: boolean) {
+    return isNewTab ? `_blank` : null;
+  }
 }
