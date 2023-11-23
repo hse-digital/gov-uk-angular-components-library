@@ -7,6 +7,8 @@ import { Component, Input } from '@angular/core';
 export class GovukPageComponent {
   @Input() headerTitle?: string;
   @Input() headerTitleLink?: string;
+  @Input() isLogoTitle?: boolean;
+  @Input() logoAlt?: string;
   @Input() footerLinks!: { title: string, href: string, isNewTab?: boolean }[];
   @Input() govukLogoLink?: string = "#";
 }

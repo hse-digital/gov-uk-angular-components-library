@@ -8,6 +8,7 @@
               <input id='input-{{id}}'
                      [attr.aria-describedby]="setDescribedByAttribute()" 
                      [attr.aria-labelledby]="labelledBy ? labelledBy : null"
+                     [attr.aria-required]="isAriaRequired ? isAriaRequired : null"
                      [attr.name]="name || id"
                      class="govuk-input {{class}}"
                      [ngClass]="{'govuk-input--error' : errorText}"

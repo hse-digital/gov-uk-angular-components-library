@@ -25,6 +25,7 @@ export class GovukInputComponent {
   @Input() public label!: string;
   @Input() public labelClass?: string;
   @Input() public isPageHeading?: boolean = false;
+  @Input() public isAriaRequired?: boolean;
   @Input() public labelFor?: string;
   @Input() public labelledBy?: string;
 
