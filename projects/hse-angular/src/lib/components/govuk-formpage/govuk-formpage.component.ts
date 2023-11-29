@@ -6,6 +6,7 @@ import { Component, EventEmitter, Input, Output } from "@angular/core";
 })
 export class GovukFormPageComponent {
     @Input() saveAndContinueText: string = "Save and continue";
+    @Input() saveAndComebackText: string = "Save and come back later";
     
     @Input() hideBackButton: boolean = false;
     @Input() hideSaveAndContinue: boolean = false;
