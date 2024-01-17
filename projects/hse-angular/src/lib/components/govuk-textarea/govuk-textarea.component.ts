@@ -36,8 +36,10 @@ export class GovukTextareaComponent {
   @Output() modelChange = new EventEmitter();
 
   ngOnInit(){
-    if(this.enableCharacterCount) 
+    if (this.enableCharacterCount) {
       this.numCharsRemaining = this.maxCharacterRemaining;
+      this.calculateNumCharsRemaining(this.model);
+    }
   }
 
   textareaNgModelChange(event: any) {
