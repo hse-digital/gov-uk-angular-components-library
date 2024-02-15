@@ -1,62 +1,80 @@
-<govuk-fieldset [id]="id" [title]="title" [isPageHeading]="isPageHeading"
-                [titleClass]="titleClass" [class]="fieldsetMarginBottom"
-                [hintText]="hint" [hintClass]="hintClass"
-                [errorText]="errorText" [errorClass]="errorClass">
+<govuk-fieldset [id]="id"
+  [title]="title"
+  [isPageHeading]="isPageHeading"
+  [titleClass]="titleClass"
+  [class]="fieldsetMarginBottom"
+  [hintText]="hint"
+  [hintClass]="hintClass"
+  [errorText]="errorText || dayErrorText || monthErrorText || yearErrorText"
+  [errorClass]="errorClass">
 
-      <div class="govuk-date-input" id="{{id}}-date-input">
-        <div class="govuk-date-input__item">
+  <div class="govuk-date-input"
+    id="{{id}}-date-input">
+    <div class="govuk-date-input__item">
 
-          <div class="govuk-form-group">
+      <div class="govuk-form-group">
 
-            <label class="govuk-label govuk-date-input__label" for="{{id}}-day">
-              Day
-            </label>
+        <label class="govuk-label govuk-date-input__label"
+          for="{{id}}-day">
+          Day
+        </label>
 
-            <input class="govuk-input govuk-date-input__input govuk-input--width-2"
-                   [(ngModel)]="model.day" (ngModelChange)="this.modelChange.emit(model)"
-                   maxlength="2"
-                   id="{{id}}-day"
-                   name="{{id}}-day"
-                   attr.aria-describedby='hint-hint-{{id}}'
-                   type="text" inputmode="numeric">
-          </div>
-        </div>
-
-        <div class="govuk-date-input__item">
-          <div class="govuk-form-group">
-            <label class="govuk-label govuk-date-input__label" for="{{id}}-month">
-              Month
-            </label>
-
-            <input class="govuk-input govuk-date-input__input govuk-input--width-2"
-                   [(ngModel)]="model.month" (ngModelChange)="this.modelChange.emit(model)"
-                   maxlength="2"
-                   id="{{id}}-month"
-                   name="{{id}}-month"
-                   attr.aria-describedby='hint-hint-{{id}}'
-                   type="text"
-                   inputmode="numeric">
-          </div>
-        </div>
-
-        <div class="govuk-date-input__item">
-          <div class="govuk-form-group">
-            <label class="govuk-label govuk-date-input__label" for="{{id}}-year">
-              Year
-            </label>
-
-            <input class="govuk-input govuk-date-input__input govuk-input--width-4"
-                   [(ngModel)]="model.year" (ngModelChange)="this.modelChange.emit(model)"
-                   maxlength="4"
-                   id="{{id}}-year"
-                   name="{{id}}-year"
-                   attr.aria-describedby='hint-hint-{{id}}'
-                   type="text"
-                   inputmode="numeric">
-          </div>
-
-        </div>
-
+        <input class="govuk-input govuk-date-input__input govuk-input--width-2"
+          [(ngModel)]="model.day"
+          (ngModelChange)="this.modelChange.emit(model)"
+          [ngClass]="{'govuk-input--error' : dayErrorText || errorText}"
+          maxlength="2"
+          id="{{id}}-day"
+          name="{{id}}-day"
+          attr.aria-describedby='hint-hint-{{id}}'
+          type="text"
+          inputmode="numeric">
       </div>
-      <govuk-link-action [id]="id" [text]="linkActionText" [action]="linkActionAction"></govuk-link-action>
-    </govuk-fieldset>
+    </div>
+
+    <div class="govuk-date-input__item">
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-date-input__label"
+          for="{{id}}-month">
+          Month
+        </label>
+
+        <input class="govuk-input govuk-date-input__input govuk-input--width-2"
+          [(ngModel)]="model.month"
+          (ngModelChange)="this.modelChange.emit(model)"
+          [ngClass]="{'govuk-input--error' : monthErrorText || errorText}"
+          maxlength="2"
+          id="{{id}}-month"
+          name="{{id}}-month"
+          attr.aria-describedby='hint-hint-{{id}}'
+          type="text"
+          inputmode="numeric">
+      </div>
+    </div>
+
+    <div class="govuk-date-input__item">
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-date-input__label"
+          for="{{id}}-year">
+          Year
+        </label>
+
+        <input class="govuk-input govuk-date-input__input govuk-input--width-4"
+          [(ngModel)]="model.year"
+          (ngModelChange)="this.modelChange.emit(model)"
+          [ngClass]="{'govuk-input--error' : yearErrorText || errorText}"
+          maxlength="4"
+          id="{{id}}-year"
+          name="{{id}}-year"
+          attr.aria-describedby='hint-hint-{{id}}'
+          type="text"
+          inputmode="numeric">
+      </div>
+
+    </div>
+
+  </div>
+  <govuk-link-action [id]="id"
+    [text]="linkActionText"
+    [action]="linkActionAction"></govuk-link-action>
+</govuk-fieldset>

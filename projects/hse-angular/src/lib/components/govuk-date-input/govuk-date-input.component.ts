@@ -1,4 +1,4 @@
-import { Component, ElementRef, EventEmitter, Input, Output } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'govuk-date-input',
@@ -23,7 +23,11 @@ export class GovukDateInputComponent {
   @Input() public linkActionText?: string;
   @Input() public linkActionAction?: any;
 
-  @Output() modelChange  = new EventEmitter();
+  @Output() modelChange = new EventEmitter();
+
+  @Input() public dayErrorText: string | undefined;
+  @Input() public monthErrorText: string | undefined;
+  @Input() public yearErrorText: string | undefined;
 
   el: any;
 
