@@ -7,7 +7,7 @@
                 <ng-content />
             </div>
 
-            <govuk-button *ngIf="!hideSaveAndContinue" (onClick)="saveAndContinue.emit()" [isLoading]="processing">{{saveAndContinueText}}</govuk-button>
+            <govuk-button id="{{id}}" *ngIf="!hideSaveAndContinue" (onClick)="saveAndContinue.emit()" [isLoading]="processing">{{saveAndContinueText}}</govuk-button>
             <save-and-come-back *ngIf="!hideSaveAndComeBack" (onClick)="saveAndComeBack.emit()" [text]="saveAndComebackText" />
         </div>
     </div>
