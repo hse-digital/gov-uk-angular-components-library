@@ -5,6 +5,7 @@ import { Component, EventEmitter, Input, Output } from "@angular/core";
     templateUrl: './govuk-formpage.component.html'
 })
 export class GovukFormPageComponent {
+    @Input() id?: string;
     @Input() saveAndContinueText: string = "Save and continue";
     @Input() saveAndComebackText: string = "Save and come back later";
     
