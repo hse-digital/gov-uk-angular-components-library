@@ -80,11 +80,6 @@ export class GovukInputAutocompleteComponent implements OnInit {
     }
   }
 
-  onTab(event: any) {
-    event.preventDefault();
-    this.setNewSelectedValue();
-  }
-
   onEnter() {
     this.setNewSelectedValue();
   }

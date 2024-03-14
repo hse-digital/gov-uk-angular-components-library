@@ -13,7 +13,7 @@
     (blur)="onInputOnBlur()"
     (keyup.arrowdown)="onArrowDown()"
     (keyup.arrowup)="onArrowUp()"
-    (keydown.tab)="onTab($event)"
+    (keydown.tab)="onEnter()"
     (keyup.enter)="onEnter()" />
 
   <div *ngIf="showAutocomplete && values.length > 0" class="autocomplete-list">
