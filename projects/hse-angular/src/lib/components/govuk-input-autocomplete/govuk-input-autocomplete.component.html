@@ -2,10 +2,19 @@
   [label]="label" [labelClass]="labelClass" [isPageHeading]="isPageHeading" labelFor="input-{{id}}">
 
   <input id='input-{{id}}' [attr.name]="name || id" class="govuk-input {{class}}"
-    [ngClass]="{'govuk-input--error' : errorText}"
-    [attr.maxlength]="maxlength"
+
+    aria-autocomplete="list"
+    role="combobox"
+    aria-owns="autocomplete-list"
+    [attr.aria-expanded]="showAutocomplete"
+    aria-haspopup="listbox"
+    autocomplete="off"
+    attr.aria-activedescendant="autocomplete-option-{{selectedIndex}}"
+
+    [ngClass]="{'govuk-input--error' : errorText}"    
+    [attr.maxlength]="maxlength"    
     [attr.aria-labelledby]="labelledBy ? labelledBy : null"
-    attr.aria-describedby='hint-hint-field-{{id}} lbl-label-field-{{id}}'
+    attr.aria-describedby='hint-hint-field-{{id}} lbl-label-field-{{id}}'    
     [attr.type]="type"
     [(ngModel)]="model"
     (ngModelChange)="onInputModelChange()"
@@ -16,13 +25,13 @@
     (keydown.tab)="onEnter()"
     (keyup.enter)="onEnter()" />
 
-  <div *ngIf="showAutocomplete && values.length > 0" class="autocomplete-list">
-    <div *ngFor="let item of values; let i = index;" [ngClass]="autocompleteListStyle(i)" (click)="clickOnAutocomplete(i)" (mousedown)="clickingItem = true">
-      <span id="autocomplete-option-{{i}}" [ngClass]="selectedIndex == i ? 'selected-option' : 'option'">
+  <ul *ngIf="showAutocomplete && values.length > 0" class="autocomplete-list" id="autocomplete-list" role="listbox" aria-labelledby="autocomplete">
+    <li [attr.aria-selected]="selectedIndex === i" *ngFor="let item of values; let i = index;" [ngClass]="autocompleteListStyle(i)" (click)="clickOnAutocomplete(i)" (mousedown)="clickingItem = true">
+      <span role="option" id="autocomplete-option-{{i}}" [ngClass]="selectedIndex == i ? 'selected-option' : 'option'">
         {{item}}
       </span>
-    </div>
-  </div>
+    </li>
+  </ul>  
 
   <govuk-link-action id='linkAction-{{id}}' [text]="linkActionText" [action]="linkActionAction"></govuk-link-action>
 
