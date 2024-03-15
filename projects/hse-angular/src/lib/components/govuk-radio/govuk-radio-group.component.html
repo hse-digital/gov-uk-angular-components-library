@@ -1,8 +1,18 @@
 <div [govukErrorLine]="errorText">
     <fieldset class="govuk-fieldset {{class}}">
         <legend [class.govuk-fieldset__legend--l]="isPageHeading" [class.govuk-fieldset__legend--m]="!isPageHeading" *ngIf="title">
-            <h1 class="govuk-fieldset__heading" *ngIf="isPageHeading">{{title}}</h1>
-            <h2 class="govuk-fieldset__heading" *ngIf="!isPageHeading">{{title}}</h2>
+            <h1 class="govuk-fieldset__heading" *ngIf="isPageHeading">
+                {{title}}
+                <span *ngIf="ariaHiddenHint" class="govuk-visually-hidden">
+                    {{ariaHiddenHint}}
+                </span>
+            </h1>
+            <h2 class="govuk-fieldset__heading" *ngIf="!isPageHeading">
+                {{title}}
+                <span *ngIf="ariaHiddenHint" class="govuk-visually-hidden">
+                    {{ariaHiddenHint}}
+                </span>
+            </h2>
         </legend>
 
         <govuk-hint *ngIf="hintText" id="hint-{{id}}" [text]="hintText" [classes]="hintClass"></govuk-hint>

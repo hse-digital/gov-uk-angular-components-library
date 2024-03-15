@@ -28,6 +28,8 @@ export class GovukInputAutocompleteComponent implements OnInit {
   @Input() public hint?: string;
   @Input() public hintClass?: string;
 
+  @Input() public ariaHiddenHint?: string;
+
   @Input() public errorText?: string;
   @Input() public errorClass?: string;
 
