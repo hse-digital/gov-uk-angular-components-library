@@ -10,6 +10,7 @@ export class GovukCheckboxComponent implements OnChanges {
     @Input() value!: string;
     @Input() text!: string;
     @Input() hint?: string;
+    @Input() isDisabled : boolean = false;
     @Input() model!: string[];
 
     @Output() onClicked = new EventEmitter();

@@ -1,6 +1,7 @@
 <div class="govuk-checkboxes__item">
   <input class="govuk-checkboxes__input"
          [id]="id + '-' + innerId"
+         [disabled]="isDisabled"
          [name]="id + '-' + innerId"
          [value]="value"
          [(ngModel)]="checked"
