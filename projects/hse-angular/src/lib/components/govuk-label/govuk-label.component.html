@@ -1,5 +1,15 @@
 <h1 class="govuk-label-wrapper" *ngIf="isPageHeading && text">
-    <label class="govuk-label {{class}}" id="lbl-{{id}}" [for]="for">{{text}}</label>
+    <label class="govuk-label {{class}}" id="lbl-{{id}}" [for]="for">
+        {{text}}
+        <span *ngIf="ariaHiddenHint" class="govuk-visually-hidden">
+            {{ariaHiddenHint}}
+        </span>
+    </label>
 </h1>
 
-<label *ngIf="!isPageHeading" class="govuk-label {{class}}" id="lbl-{{id}}" for="{{for}}">{{text}}</label>
+<label *ngIf="!isPageHeading" class="govuk-label {{class}}" id="lbl-{{id}}" for="{{for}}">
+    {{text}}
+    <span *ngIf="ariaHiddenHint" class="govuk-visually-hidden">
+        {{ariaHiddenHint}}
+    </span>
+</label>

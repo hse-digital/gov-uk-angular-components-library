@@ -14,9 +14,14 @@
         class="govuk-radios__input"
         tabindex="0"
         attr.aria-describedby="hint-radio-item-{{id}}">
+    
     <label id="{{id}}-label"
         class="govuk-label govuk-radios__label"
-        for="{{id}}-input">{{label}}</label>
+        for="{{id}}-input">{{label}}
+        <span *ngIf="ariaHiddenHint" class="govuk-visually-hidden">
+            {{ariaHiddenHint}}
+        </span>
+    </label>
 
     <govuk-hint *ngIf="hint"
         id="radio-item-{{id}}"
