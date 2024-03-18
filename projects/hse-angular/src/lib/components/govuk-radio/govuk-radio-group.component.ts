@@ -28,6 +28,8 @@ export class GovukRadioGroupComponent implements AfterViewInit {
   @Input() public hintText?: string;
   @Input() public hintClass?: string;
 
+  @Input() public ariaHiddenHint?: string;
+
   @Input() public errorText?: string;
   @Input() public errorClass?: string;
 

@@ -10,4 +10,5 @@ export class GovukLabelComponent {
   @Input() class?: string;
   @Input() isPageHeading?: boolean = false;
   @Input() for?: string;
+  @Input() ariaHiddenHint?: string;
 }

@@ -16,6 +16,8 @@ export class GovukFieldComponent {
   @Input() public hint?: string;
   @Input() public hintClass?: string;
 
+  @Input() public ariaHiddenHint?: string;
+
   @Input() public errorText?: string;
   @Input() public errorClass?: string;
 }
